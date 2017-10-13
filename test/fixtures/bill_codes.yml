@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bill_id: 1
+  code_id: 1
+  amt_billed: 9.99
+
+two:
+  bill_id: 1
+  code_id: 1
+  amt_billed: 9.99

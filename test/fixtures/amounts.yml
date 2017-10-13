@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code_id: 1
+  location_id: 1
+  facility_fee: 9.99
+  non_facility_fee: 9.99
+
+two:
+  code_id: 1
+  location_id: 1
+  facility_fee: 9.99
+  non_facility_fee: 9.99
