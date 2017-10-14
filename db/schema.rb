@@ -16,3 +16,44 @@ ActiveRecord::Schema.define(version: 20171013033146) do
   enable_extension "plpgsql"
 
 
+  create_table "amounts", force: :cascade do |t|
+    t.integer "code_id"
+    t.integer "location_id"
+    t.decimal "facility_fee", precision: 11, scale: 2
+    t.decimal "non_facility_fee", precision: 11, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bill_codes", force: :cascade do |t|
+    t.integer "bill_id"
+    t.integer "code_id"
+    t.decimal "amt_billed", precision: 11, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  create_table "bills", force: :cascade do |t|
+    t.integer "location_id"
+    t.date "dos"
+    t.string "hospital"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  create_table "codes", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  create_table "locations", force: :cascade do |t|
+    t.string "carrier"
+    t.string "locality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "zipcodes", force: :cascade do |t|
+    t.integer "location_id"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
