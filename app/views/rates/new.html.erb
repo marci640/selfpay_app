@@ -1,0 +1,40 @@
+<h1> Negotiate your Hospital Bills! </h1>
+
+<br> 
+
+<h3> Enter your procedure codes (CPT codes) and billed amounts to generate a letter to your hospital </h3>
+
+<br>
+
+<%= form_tag "/rates", method: :post do %>
+
+  
+<form class="container">
+
+  <div class="row">
+    <div class="col-sm-4 mb-4">
+      <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" >
+    </div>
+
+    <div class="col-sm-4 mb-4">
+      <input type="text" class="form-control" name="procedure_code" placeholder="Procedure Code" >
+    </div>
+
+    <div class="col-sm-4 mb-4">
+      <input type="text" class="form-control" name="dos" placeholder="Date of Service" >
+    </div>
+
+    <div class="col-sm-4 mb-4">
+      <input type="text" class="form-control" name="hospital" placeholder="Hospital" >
+    </div>
+
+    <div class="col-sm-4 mb-4">
+      <input type="text" class="form-control" name="amt_billed" placeholder="Billed Amount" >
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Submit form</button>
+
+</form>
+
+<% end %>

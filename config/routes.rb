@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/rates" => "rates#new"
+  get "/rates/new" => "rates#new"
   post "/rates" => "rates#create"
 
 end
