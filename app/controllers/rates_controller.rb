@@ -8,7 +8,7 @@ class RatesController < ApplicationController
     zipcode = Zipcode.find_by(code: params[:zipcode])
     location = Location.find(zipcode.location_id)
 
-    bill = Bill.create(
+    @bill = Bill.new(
       location_id: location.id,
       dos: params[:dos],
       hospital: params[:hospital]
@@ -24,8 +24,8 @@ class RatesController < ApplicationController
         amt_billed = params[:"amt_billed#{index}"]
         amount = Amount.find_by(code_id: code.id, location_id: location.id)
 
-        BillCode.create(
-          bill_id: bill.id,
+        BillCode.new(
+          bill_id: @bill.id,
           code_id: code.id,
           amt_billed: amt_billed
         )
