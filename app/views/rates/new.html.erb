@@ -1,39 +1,47 @@
-<h1> Negotiate your Hospital Bills! </h1>
+<br>
+<h2> Negotiate your Hospital Bills </h2>
 
-<br> 
-
-<h3> Enter your procedure codes (CPT codes) and billed amounts to generate a letter to your hospital </h3>
+<p> Complete the form to compare your hospital bill with Medicare reimbursement rates for your area and/or generate a negotiation letter to send to your hospital</p>
 
 <br>
 
 <%= form_tag "/rates", method: :post do %>
 
-  
-<form class="container">
-
+<form class="form_container">
   <div class="row">
     <div class="col-sm-4 mb-4">
-      <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" >
-    </div>
-
-    <div class="col-sm-4 mb-4">
-      <input type="text" class="form-control" name="procedure_code" placeholder="Procedure Code" >
+     <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" >
     </div>
 
     <div class="col-sm-4 mb-4">
       <input type="text" class="form-control" name="dos" placeholder="Date of Service" >
     </div>
-
+  
     <div class="col-sm-4 mb-4">
       <input type="text" class="form-control" name="hospital" placeholder="Hospital" >
     </div>
-
-    <div class="col-sm-4 mb-4">
-      <input type="text" class="form-control" name="amt_billed" placeholder="Billed Amount" >
-    </div>
   </div>
 
+  <p> Note: If your bill does not include procedure codes (5 digit CPT codes) click <a href="https://www.w3schools.com">here</a> </p>
+  <hr>
+
+  <%index = 1 %>
+  <% 8.times do %>
+    <div class="row">
+      <div class="col-sm-4 mb-4">
+        <input type="text" class="form-control" name="amt_billed<%=index%>" placeholder="Amount Billed" >
+      </div>
+      <div class="col-sm-4 mb-4">
+        <input type="text" class="form-control" name="procedure_code<%=index%>" placeholder="Procedure Code" >
+        <% index += 1 %>
+      </div>
+    </div>
+  <%end%>
+
+
   <button class="btn btn-primary" type="submit">Submit form</button>
+ 
+  </div>
 
 </form>
 
