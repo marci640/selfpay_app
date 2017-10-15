@@ -4,37 +4,38 @@
 <h3> How your bill compares to Medicare's rates: </h3>
 <br>
 
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Hospital Charge</th>
-      <th>Facility Rate</th>
-      <th>Non-Facility Rate</th>
-      <th>The Difference</th>
-      <th>Add Results to Letter?</th>
-    </tr>
-  </thead>
-  <% @arrays.each do |array| %> 
-    <tbody>
+<%= form_tag "/letters", method: :post do %>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= array[0].code %></td>
-        <td><%= number_to_currency(array[1]) %></td>
-        <td><%= number_to_currency(array[2].facility_fee)%></td>
-        <td><%= number_to_currency(array[2].non_facility_fee)%></td>
-        <td class="difference"><%= number_to_currency((array[1].to_i - array[2].facility_fee))%></td>
-        <td><div class="form-check">
+        <th>Code</th>
+        <th>Hospital Charge</th>
+        <th>Facility Rate</th>
+        <th>Non-Facility Rate</th>
+        <th>The Difference</th>
+        <th>Add Results to Letter?</th>
+      </tr>
+    </thead>
+    <% @arrays.each do |array| %> 
+      <tbody>
+        <tr>
+          <td><%= array[0].code %></td>
+          <td><%= number_to_currency(array[1]) %></td>
+          <td><%= number_to_currency(array[2].facility_fee)%></td>
+          <td><%= number_to_currency(array[2].non_facility_fee)%></td>
+          <td class="difference"><%= number_to_currency((array[1].to_i - array[2].facility_fee))%></td>
+
+          <td><div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input">
+                <input type="checkbox" name="table_row" value="<%=array%>" class="form-check-input">
                 Add to Letter
               </label>
             </div>
-        </td>
-      </tr>
-    </tbody>
-  <%end%>
-</table>
+          </td>
+        </tr>
+      </tbody>
+    <%end%>
+  </table>
 
 <hr> 
 <br>
@@ -42,23 +43,15 @@
 
 <h3> Generate a Letter </h3>
 
-<%= form_tag "/letters", method: :post do %>
-  <form class="form_container">
+<h5> To Generate a letter to <%=@bill.hospital%> for date of service: <%=@bill.dos%>, checkmark the data you'd like to include above and click the button below. </h5> 
+<button class="btn btn-primary" type="submit" href="/letters">Generate Letter</button>
+<%end%>
+
+
+  
     
-    <div class="row">
-      <div class="col-sm-4 mb-4">
-        <label class="form-control-label">To: Hospital</label>
-        <input type="text" class="form-control" name="hospital" value="<%=@bill.hospital%>"> 
-      </div>
-
-      <div class="col-sm-4 mb-4">
-        <label class="form-control-label">For: Date of Service</label>
-        <input type="text" class="form-control" name="dos" value="<%=@bill.dos%>" >
-      </div>
-     </div>
-      <button class="btn btn-primary" type="submit">Generate Letter</button>
    
-  </form>
+  
 
-<% end %>
+
 

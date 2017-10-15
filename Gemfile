@@ -11,6 +11,8 @@ gem 'rails', '~> 5.1.4'
 # Bootstrap & jquery
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+# PDF generator for letter
+gem 'prawn', '~> 2.2', '>= 2.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
