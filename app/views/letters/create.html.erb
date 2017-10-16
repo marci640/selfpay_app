@@ -1,1 +1,11 @@
 <h3> Here is your letter </h3>
+
+Dear hospital,
+
+See table below blah blah blah
+
+<%=@codes %>
+
+<% @codes.each do |code| %>
+  <h5> <%=code[:code]%> </h5>
+<% end %>

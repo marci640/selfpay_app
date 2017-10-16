@@ -16,25 +16,25 @@
         <th>Add Results to Letter?</th>
       </tr>
     </thead>
-    <% @arrays.each do |array| %> 
-      <tbody>
+    <tbody>
+    <% @arrays.each_with_index do |array, index| %> 
+      <% index = 1 %>
         <tr>
           <td><%= array[0].code %></td>
           <td><%= number_to_currency(array[1]) %></td>
           <td><%= number_to_currency(array[2].facility_fee)%></td>
           <td><%= number_to_currency(array[2].non_facility_fee)%></td>
           <td class="difference"><%= number_to_currency((array[1].to_i - array[2].facility_fee))%></td>
-
           <td><div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" name="table_row" value="<%=array%>" class="form-check-input">
+                <input type="checkbox" name="table_row<%=index%>" value="<%=array%>" class="form-check-input"> 
                 Add to Letter
               </label>
             </div>
           </td>
         </tr>
-      </tbody>
     <%end%>
+    </tbody>
   </table>
 
 <hr> 
