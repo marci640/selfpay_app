@@ -1,16 +1,20 @@
 class LettersController < ApplicationController
 
   def create
-    @codes = []
-    index = 1
+    bill = Bill.find(params[:bill_id])
+    @dos = bill.dos
+    @hospital = bill.hospital 
+    
+    @all_data = []
+    
+    index = 0
     8.times do 
       if params[:"table_row#{index}"]
-        @codes << params[:"table_row#{index}"]
-      end
-    end
+        @all_data << params[:"table_row#{index}"].split(',')
+        index += 1
+      end 
+    end 
   end 
     
-    
-
  
 end

@@ -8,7 +8,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Code</th>
+        <th>Procedure Code</th>
         <th>Hospital Charge</th>
         <th>Facility Rate</th>
         <th>Non-Facility Rate</th>
@@ -18,7 +18,6 @@
     </thead>
     <tbody>
     <% @arrays.each_with_index do |array, index| %> 
-      <% index = 1 %>
         <tr>
           <td><%= array[0].code %></td>
           <td><%= number_to_currency(array[1]) %></td>
@@ -27,7 +26,7 @@
           <td class="difference"><%= number_to_currency((array[1].to_i - array[2].facility_fee))%></td>
           <td><div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" name="table_row<%=index%>" value="<%=array%>" class="form-check-input"> 
+                <input type="checkbox" name="table_row<%=index%>" value="<%=array[0].code%>, <%=array[1]%>, <%=array[2].facility_fee%>, <%=array[2].non_facility_fee%>" class="form-check-input"> 
                 Add to Letter
               </label>
             </div>
@@ -43,9 +42,15 @@
 
 <h3> Generate a Letter </h3>
 
-<h5> To Generate a letter to <%=@bill.hospital%> for date of service: <%=@bill.dos%>, checkmark the data you'd like to include above and click the button below. </h5> 
-<button class="btn btn-primary" type="submit" href="/letters">Generate Letter</button>
+
+
+<h5> To Generate a letter to <%=@bill.hospital%> for date of service: <%=@bill.dos%>, <%=@bill.id%> checkmark the data you'd like to include above and click the button below. </h5> 
+<!-- <button class="btn btn-primary" type="submit" href="/letters">Generate Letter</button> -->
+
+
+<%= button_to 'Generate Letter', "/letters", method: :post, params: { bill_id: @bill.id } %>
 <%end%>
+
 
 
   

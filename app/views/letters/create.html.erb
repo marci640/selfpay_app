@@ -1,11 +1,41 @@
-<h3> Here is your letter </h3>
 
-Dear hospital,
+<p> <%= Date.today %> </p>
 
-See table below blah blah blah
+<p> <%=@hospital%> </p>
+<p> City, State, Zip Code </p>
 
-<%=@codes %>
+<p> RE: Medical Debt Reduction Request </p>
 
-<% @codes.each do |code| %>
-  <h5> <%=code[:code]%> </h5>
-<% end %>
+<input type="text" name="name" >
+
+<p> Dear Billing Department, </p>
+
+<p> This letter is a formal request to have my hospital charges reduced/discounted based on Medicare's fee schedule for this location. See the table below for price comparisons and clarification. Feel free to contact me directly and/or resend an adjusted bill. </p>
+
+<p> Thank you for your consideration. </p>
+
+<p> Sincerely, </p>
+​
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Procedure Code</th>
+      <th>Hospital Charge</th>
+      <th>Facility Rate</th>
+      <th>Non-Facility Rate</th>
+      <th>The Difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @all_data.each do |row| %>
+      <tr>
+        <td><%=row[0]%></td>
+        <td><%=number_to_currency(row[1])%></td>
+        <td><%=number_to_currency(row[2])%></td>
+        <td><%=number_to_currency(row[3])%></td>
+        <td><%=number_to_currency(row[1].to_i - row[2].to_i)%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
