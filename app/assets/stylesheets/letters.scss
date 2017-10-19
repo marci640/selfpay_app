@@ -1,3 +1,26 @@
 // Place all the styles related to the Letters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@media print {
+  #hideForPrint {
+    display: none;
+  }
+  input,
+  textarea {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+.letter {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  padding: 15px; 
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  width: 21cm;
+  height: 26.7cm; 
+}
+

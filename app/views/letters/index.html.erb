@@ -1,0 +1,35 @@
+
+<div id="hideForPrint">
+  
+<h2> Important! </h2>
+
+<h5> If your hospital bill does not include 5 digit procedure codes (CPT codes), you should request an itemized statement. An itemized statement is needed to compare rates for each individual service. </h5>
+
+<h2> Don't Pay without knowing what you are paying for! </h2>
+
+<h5> Before paying your bill, call or send a request for an itemized statement. Example for use below. </h5>
+
+</div>
+
+  <div class="letter">
+
+    <p> <%= Time.now.strftime("%m/%d/%Y") %> </p>
+
+    <textarea rows="5" cols="30"> </textarea>
+
+    <br>
+
+    <p> RE: Medical Debt Discount Request </p>
+
+    <p> To whom it may concern, </p>
+
+    <p> This letter is a formal request for an itemized statement. I recently received a bill from your facility; however, I will require an itemized billing statement (including CPT codes) before submitting a payment.  
+    </p>
+
+    <p> Sincerely, </p>
+    ​
+    <input type="text" >
+
+    <input id="hideForPrint" type="button" value="Print" onclick="window.print();" />
+
+  </div>

@@ -1,41 +1,59 @@
 
-<p> <%= Date.today %> </p>
 
-<p> <%=@hospital%> </p>
-<p> City, State, Zip Code </p>
+  <div class="letter">
 
-<p> RE: Medical Debt Reduction Request </p>
+    <p> <%= Time.now.strftime("%m/%d/%Y") %> </p>
 
-<input type="text" name="name" >
+    <p> Hospital </p>
+    <p> City, State, Zip Code </p>
 
-<p> Dear Billing Department, </p>
+    <textarea rows="5" cols="30"> </textarea>
 
-<p> This letter is a formal request to have my hospital charges reduced/discounted based on Medicare's fee schedule for this location. See the table below for price comparisons and clarification. Feel free to contact me directly and/or resend an adjusted bill. </p>
+    <br>
 
-<p> Thank you for your consideration. </p>
+    <p> RE: Medical Debt Discount Request </p>
 
-<p> Sincerely, </p>
-​
+    <p> Dear Billing Department, </p>
 
-<table class="table table-sm">
-  <thead>
-    <tr>
-      <th>Procedure Code</th>
-      <th>Hospital Charge</th>
-      <th>Facility Rate</th>
-      <th>Non-Facility Rate</th>
-      <th>The Difference</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @all_data.each do |row| %>
-      <tr>
-        <td><%=row[0]%></td>
-        <td><%=number_to_currency(row[1])%></td>
-        <td><%=number_to_currency(row[2])%></td>
-        <td><%=number_to_currency(row[3])%></td>
-        <td><%=number_to_currency(row[1].to_i - row[2].to_i)%></td>
-      </tr>
-    <%end%>
-  </tbody>
-</table>
+    <p> This letter is a formal request to have my hospital charges reduced/discounted based on Medicare's fee schedule for this location. See the table below for price comparisons and clarification. Feel free to contact me directly and/or resend an adjusted bill. </p>
+
+    <p> Thank you for your consideration. </p>
+
+    <p> Sincerely, </p>
+    ​
+    <input type="text" >
+
+    <br> 
+
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Procedure Code</th>
+          <th>Hospital Charge</th>
+          <th>Facility Rate</th>
+          <th>Non-Facility Rate</th>
+          <th>The Difference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @all_data.each do |row| %>
+          <tr>
+            <td><%=row[0]%></td>
+            <td><%=number_to_currency(row[1])%></td>
+            <td><%=number_to_currency(row[2])%></td>
+            <td><%=number_to_currency(row[3])%></td>
+            <td><%=number_to_currency(row[1].to_i - row[2].to_i)%></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+
+    <input id="hideForPrint" type="button" value="Print" onclick="window.print();" />
+
+  </div>
+<!-- /////////////////////////////// -->
+
+
+
+
+
