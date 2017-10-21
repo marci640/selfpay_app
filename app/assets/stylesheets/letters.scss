@@ -18,9 +18,28 @@
   display: block;
   margin: 0 auto;
   padding: 15px; 
-  margin-bottom: 0.5cm;
+  margin: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
   width: 21cm;
   height: 26.7cm; 
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hr-theme-slash-2 {
+  display: flex;
+  
+  .hr-line {
+    width: 100%;
+    position: relative;
+    margin: 15px;
+    border-bottom: 1px solid #000;
+  }
+  .hr-icon {
+    position: relative;
+    top: 3px;
+  }
+}

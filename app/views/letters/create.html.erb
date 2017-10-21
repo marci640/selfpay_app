@@ -1,17 +1,35 @@
 
+<head>  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+</head>  
 
-  <div class="letter">
+<div class="letter" >
 
+  <br> 
+  
+  <div class="hr-theme-slash-2">
+    <div class="hr-line"></div>
+    <div class="hr-icon"><i class="fa fa-ambulance" ></i></div>
+    <div class="hr-line"></div>
+  </div>
+  
+  <br>
+  
     <p> <%= Time.now.strftime("%m/%d/%Y") %> </p>
-
-    <p> Hospital </p>
-    <p> City, State, Zip Code </p>
+    
+    <ul>
+    <% @hospital_address.each do |line| %> 
+    <li> <%=line%> </li>
+    <%end%>
+    </ul>
 
     <textarea rows="5" cols="30"> </textarea>
 
     <br>
 
     <p> RE: Medical Debt Discount Request </p>
+
+    <p> Date(s) of service: <%=@dos%> </p>
 
     <p> Dear Billing Department, </p>
 
@@ -23,7 +41,8 @@
     ​
     <input type="text" >
 
-    <br> 
+    <br>
+    <br>
 
     <table class="table table-sm">
       <thead>
@@ -31,7 +50,6 @@
           <th>Procedure Code</th>
           <th>Hospital Charge</th>
           <th>Facility Rate</th>
-          <th>Non-Facility Rate</th>
           <th>The Difference</th>
         </tr>
       </thead>
@@ -41,7 +59,6 @@
             <td><%=row[0]%></td>
             <td><%=number_to_currency(row[1])%></td>
             <td><%=number_to_currency(row[2])%></td>
-            <td><%=number_to_currency(row[3])%></td>
             <td><%=number_to_currency(row[1].to_i - row[2].to_i)%></td>
           </tr>
         <%end%>
@@ -51,7 +68,7 @@
     <input id="hideForPrint" type="button" value="Print" onclick="window.print();" />
 
   </div>
-<!-- /////////////////////////////// -->
+
 
 
 

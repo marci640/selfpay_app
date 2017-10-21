@@ -4,9 +4,12 @@ class LettersController < ApplicationController
   end 
   
   def create
-    # bill = Bill.find(params[:bill_id])
-    # @dos = bill.dos
-    # @hospital = bill.hospital 
+    bill = Bill.find(params[:bill_id])
+    @dos = bill.dos
+    hospital = bill.hospital 
+    @hospital_address = hospital.split(', ')
+    @hospital_address.pop
+
     
     @all_data = []
     

@@ -1,4 +1,4 @@
-<br>
+<body>
 <h2> Negotiate your Hospital Bills </h2>
 
 <p> Complete the form to compare your hospital bill with Medicare reimbursement rates for your area and/or generate a negotiation letter to send to your hospital</p>
@@ -7,6 +7,7 @@
 
 <%= form_tag "/rates", method: :post do %>
 
+
 <form class="form_container">
   <div class="row">
     <div class="col-sm-4 mb-4">
@@ -14,11 +15,11 @@
     </div>
 
     <div class="col-sm-4 mb-4">
-      <input type="text" class="form-control" name="dos" placeholder="Date of Service" >
+      <input type="text" class="form-control" name="dos" placeholder="Date of Service or Date Range" >
     </div>
   
     <div class="col-sm-4 mb-4">
-      <input type="text" class="form-control" name="hospital" placeholder="Hospital" >
+      <input id="search_term" class="form-control" type="text" name="hospital" placeholder="Hospital" >
     </div>
   </div>
 
@@ -46,3 +47,18 @@
 </form>
 
 <% end %>
+
+<script> 
+  function activatePlacesSearch(){
+    var input = document.getElementById('search_term');
+    var options = {
+      types: ['establishment'],
+      componentRestrictions: {country: 'us'}
+    };
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+  }
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_vTZoge6C138rv2TM2NEJgpuK6wu1VBg&libraries=places&callback=activatePlacesSearch"></script>
+
+</body>

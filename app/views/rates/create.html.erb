@@ -1,4 +1,3 @@
-
 <br> 
 <div class="container">
 <h3> How your bill compares to Medicare's rates: </h3>
@@ -11,7 +10,6 @@
         <th>Procedure Code</th>
         <th>Hospital Charge</th>
         <th>Facility Rate</th>
-        <th>Non-Facility Rate</th>
         <th>The Difference</th>
         <th>Add Results to Letter?</th>
       </tr>
@@ -22,8 +20,7 @@
           <td><%= array[0].code %></td>
           <td><%= number_to_currency(array[1]) %></td>
           <td><%= number_to_currency(array[2].facility_fee)%></td>
-          <td><%= number_to_currency(array[2].non_facility_fee)%></td>
-          <td class="difference"><%= number_to_currency((array[1].to_i - array[2].facility_fee))%></td>
+          <td class="<%= 'difference' if array[1].to_i > array[2].facility_fee%>"><%= number_to_currency((array[1].to_i - array[2].facility_fee))%></td>
           <td><div class="form-check">
               <label class="form-check-label">
                 <input type="checkbox" name="table_row<%=index%>" value="<%=array[0].code%>, <%=array[1]%>, <%=array[2].facility_fee%>, <%=array[2].non_facility_fee%>" class="form-check-input"> 
@@ -43,9 +40,7 @@
 <h3> Generate a Letter </h3>
 
 
-
-<!-- <h5> To Generate a letter to <%=@bill.hospital%> for date of service: <%=@bill.dos%>, <%=@bill.id%> checkmark the data you'd like to include above and click the button below. </h5>  -->
-<!-- <button class="btn btn-primary" type="submit" href="/letters">Generate Letter</button> -->
+<p> To generate a price negotiation letter to <em><%=@hospital_address[0]%></em> for date(s) of service: <em><%=@bill.dos%></em>, checkmark the data you'd like to include above and click the button below. </p> 
 
 
 <%= button_to 'Generate Letter', "/letters", method: :post, params: { bill_id: @bill.id } %>

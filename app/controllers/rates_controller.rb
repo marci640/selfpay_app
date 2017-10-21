@@ -8,9 +8,9 @@ class RatesController < ApplicationController
 
   def create
     zipcode = Zipcode.find_by(code: params[:zipcode])
-    location = Location.find(zipcode.location_id)
+    location = Location.find(zipcode.location_id) 
 
-    @bill = Bill.new(
+    @bill = Bill.create(
       location_id: location.id,
       dos: params[:dos],
       hospital: params[:hospital]
@@ -31,7 +31,7 @@ class RatesController < ApplicationController
         end 
         amt_billed = params[:"amt_billed#{index}"]
         
-        BillCode.new(
+        BillCode.create(
           bill_id: @bill.id,
           code_id: code.id,
           amt_billed: amt_billed
@@ -43,6 +43,7 @@ class RatesController < ApplicationController
       index += 1 
     end
     @arrays = [codes_array, hospital_amounts, amounts_array].transpose.each { |x, y, z| p [x, y, z] }
+    @hospital_address = @bill.hospital.split(', ')
   end 
 
 end
