@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post "/rates" => "rates#create"
   get "/letters" => "letters#index"
   post "/letters" => "letters#create"
+  get "/drugs" => "drugs#index"
 end

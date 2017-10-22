@@ -1,0 +1,32 @@
+
+<html>
+  <head>
+<!--     <link rel="stylesheet" href="https://cdn.rawgit.com/LeaVerou/awesomplete/gh-pages/awesomplete.css"> -->
+   <!--  <script src="https://cdn.rawgit.com/LeaVerou/awesomplete/gh-pages/awesomplete.min.js"></script> -->
+   <link rel="stylesheet" href="awesomplete.css" />
+   <script src="awesomplete.js" async></script>
+   <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </head>
+
+  <script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "https://rxnav.nlm.nih.gov/REST/displaynames.json", true);
+    ajax.onload = function() {
+      var list = JSON.parse(ajax.responseText)['displayTermsList']['term'].map(function(i) { return i; });
+      new Awesomplete(document.querySelector("#drugs"),{ list: list });
+    };
+    ajax.send();
+  </script>
+
+  <body>
+
+    <input id="drugs" placeholder="Enter a drug"/>
+
+    <a href="https://twitter.com/intent/tweet?screen_name=SelfPayAdvocate&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-size="large" data-text="#Aetna " data-dnt="true" data-show-count="false">Tweet to @SelfPayAdvocate</a>
+
+
+
+  </body>
+</html>
+
+
