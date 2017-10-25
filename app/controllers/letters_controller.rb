@@ -10,7 +10,6 @@ class LettersController < ApplicationController
     @hospital_address = hospital.split(', ')
     @hospital_address.pop
 
-    
     @all_data = []
     
     index = 0
@@ -20,7 +19,6 @@ class LettersController < ApplicationController
         index += 1
       end 
     end 
-  end 
-    
+  end     
  
 end

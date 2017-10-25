@@ -1,6 +1,5 @@
-<br> 
-<div class="container">
 <h3> How your bill compares to Medicare's rates: </h3>
+
 <br>
 
 <%= form_tag "/letters", method: :post do %>
@@ -14,8 +13,9 @@
         <th>Add Results to Letter?</th>
       </tr>
     </thead>
+
     <tbody>
-    <% @arrays.each_with_index do |array, index| %> 
+      <% @arrays.each_with_index do |array, index| %> 
         <tr>
           <td><%= array[0].code %></td>
           <td><%= number_to_currency(array[1]) %></td>
@@ -29,19 +29,16 @@
             </div>
           </td>
         </tr>
-    <%end%>
+      <%end%>
     </tbody>
   </table>
 
-<hr> 
-<br>
-<!-- line break -->
+<hr>
+<!-- line break --> 
 
 <h3> Generate a Letter </h3>
 
-
-<p> To generate a price negotiation letter to <em><%=@hospital_address[0]%></em> for date(s) of service: <em><%=@bill.dos%></em>, checkmark the data you'd like to include above and click the button below. </p> 
-
+<p> To generate a price negotiation letter to <em><%=@hospital_address[0]%></em> for date(s) of service: <em><%=@bill.dos%></em>, checkmark the data you'd like to include and click the Generate Letter button. </p> 
 
 <%= button_to 'Generate Letter', "/letters", method: :post, params: { bill_id: @bill.id } %>
 <%end%>
