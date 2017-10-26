@@ -9,6 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Unirest for API
+gem 'seed_dump'
 gem 'unirest', '~> 1.1.2'
 # env gem
 gem 'dotenv-rails'
