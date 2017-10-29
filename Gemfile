@@ -8,8 +8,11 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-# Unirest for API
+# Faker gem for fake user data
+gem 'faker'
+# Seed dump gem for seed file
 gem 'seed_dump'
+# Unirest for API
 gem 'unirest', '~> 1.1.2'
 # env gem
 gem 'dotenv-rails'
@@ -38,7 +41,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

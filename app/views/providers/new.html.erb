@@ -1,0 +1,51 @@
+<h2> Become a "Self Pay" Provider! </h2>
+
+<% if false %>
+  <ul class="nav">
+    <% if current_user == nil %>
+      <li class="nav-item">
+        <a class="btn btn-primary" href="/signup" role="button">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-primary" href="/login" role="button">Login</a>
+      </li>
+    
+    <% else %>
+      <li class="nav-item">
+        <a class="btn btn-primary" href="/logout" role="button">Logout</a>
+      </li>
+    <%end%>
+  </ul>
+<% end %>
+
+
+<br>
+
+<p> Enter your zipcode and your most commonly billed CPT codes to see Self Pay's Rates. </p>
+
+<%= form_tag "/providers", method: :post do %>
+
+  <form class="form_container">
+    <div class="row">
+      <div class="col-sm-3 mb-3">
+        <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" >
+      </div>
+      Note: Self Pay Rates are Medicare's Non-Facility Rates + 15%
+    </div>
+
+    <div class="row">
+      <%index = 1 %>
+      <% 8.times do %>
+        <div class="col-sm-3 mb-3">
+          <input type="text" class="form-control" name="procedure_code<%=index%>" placeholder="CPT Code" >
+          <% index += 1 %>
+        </div>
+      <%end%>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit form</button>
+
+  </form>
+
+<% end %>
+

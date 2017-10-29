@@ -1,0 +1,45 @@
+<h3> SelfPay Rates: </h3>
+
+<br>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Procedure Code</th>
+        <th>SelfPay Rate</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @arrays.each_with_index do |array, index| %> 
+        <tr>
+          <td><%= array[0].code %></td>
+          <td><%= number_to_currency(array[1])%></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+
+<hr>
+<!-- line break --> 
+
+<p> By signing up: </p> 
+<ul class= "provider_summary">
+  <li> Potential SelfPay patients will see your practice listed as a participating provider </li>
+  <li> Your agree to bill SelfPay patients at the SelfPay rate </li>
+  <li> SelfPay patients can mention this site to receive the discount </li>
+  <li> Come and go as a you wish - signing up and canceling is done with the click of a button </li>
+</ul>
+
+
+<p> To participate as a SelfPay Provider enter your NPI and click Continue. </p>
+
+<%= form_tag "/signup", method: :get do %>
+  <input type="text" class="form-control" name="npi" placeholder="NPI" >
+  <button class="btn btn-primary" type="submit">Continue</button>
+<%end%>
+
+
+
+
+
