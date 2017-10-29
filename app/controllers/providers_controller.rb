@@ -1,6 +1,7 @@
 class ProvidersController < ApplicationController
   
   def new
+    @provider = Unirest.get("https://www.bloomapi.com/api/sources/usgov.hhs.npi/1477565794").body
   end
 
   def create

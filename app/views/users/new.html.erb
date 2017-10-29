@@ -1,13 +1,35 @@
 <h1>Signup!</h1>
 
-
-
-<%= @npi %>
+<h3> Edit as necessary and click submit. </h3>
 
 <%= form_tag '/users', method: :post do  %>
 
   <div>
-    Name: <input type="text" name="name">
+    First Name: <input type="text" name="first_name" value='<%=@first_name%>'>
+  </div>
+
+  <div>
+    Last Name: <input type="text" name="last_name" value='<%=@last_name%>'>
+  </div>
+
+  <div>
+    Address: <input type="text" name="address" value='<%=@address%>'>
+  </div>
+
+  <div>
+    City: <input type="text" name="city" value='<%=@city%>'>
+  </div>
+
+  <div>
+    State: <input type="text" name="state" value='<%=@state%>'>
+  </div>
+
+  <div>
+    Zipcode: <input type="text" name="zipcode" value='<%=@zipcode%>'>
+  </div>
+
+  <div>
+    Phone: <input type="text" name="phone" value='<%=@phone%>'>
   </div>
 
   <div>
