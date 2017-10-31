@@ -1,10 +1,13 @@
 class ProvidersController < ApplicationController
   
+  def index
+    @providers = User.all 
+  end
+
   def new
   end
 
   def create
-
     zipcode = Zipcode.find_by(code: params[:zipcode])
     location = Location.find(zipcode.location_id) 
 
@@ -30,6 +33,8 @@ class ProvidersController < ApplicationController
     @arrays = codes_array.zip(selfpay_amounts)
   end 
 
-
+  def show
+    @provider = User.find(params[:id])
+  end 
 
 end

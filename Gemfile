@@ -8,8 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-# Faker gem for fake user data
-gem 'faker'
+# bloom api gem for provider info
+gem 'bloom_api'
 # Seed dump gem for seed file
 gem 'seed_dump'
 # Unirest for API

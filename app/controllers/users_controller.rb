@@ -2,34 +2,29 @@ class UsersController < ApplicationController
   
   def new
     npi = params[:npi]
-    provider = Unirest.get("https://api.betterdoctor.com/2016-03-01/doctors/npi/#{npi}?user_key=#{ENV['BETTER_DOCTOR_KEY']}").body
-
-    @image = provider["data"]["profile"]["image_url"]
-    @practice_name = provider["data"]["practices"][0]["name"]
-    @first_name = provider["data"]["profile"]["first_name"]
-    @last_name = provider["data"]["profile"]["last_name"]
-    @credentials = provider["data"]["profile"]["title"]
-    # @specialty = provider["data"]["specialties"][0]["name"]
-    @phone = provider["data"]["practices"][0]["phones"][0]["number"]
-    @address_1 = provider["data"]["practices"][0]["visit_address"]["street"]
-    @address_2 = provider["data"]["practices"][0]["visit_address"]["street2"]
-    @city = provider["data"]["practices"][0]["visit_address"]["city"] 
-    @state = provider["data"]["practices"][0]["visit_address"]["state"]
-    @zipcode = provider["data"]["practices"][0]["visit_address"]["zip"]
-    @bio = provider["data"]["profile"]["bio"]
+    @provider = BloomApi.find_by_npi(npi)
   end
 
   def create
     user = User.new(
-      name: params[:name],
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      credential: params[:credential],
+      phone: params[:phone],
+      address_1: params[:address_1],
+      address_2: params[:address_2],
+      city: params[:city],
+      state: params[:state],
+      zipcode: params[:zipcode],
       email: params[:email],
+      specialty: params[:specialty],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
     if user.save
       session[:user_id] = user.id
       flash[:success] = 'Successfully created account!'
-      redirect_to '/'
+      redirect_to "/providers/#{user.id}"
     else
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/signup'
