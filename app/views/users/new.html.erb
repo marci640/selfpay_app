@@ -4,6 +4,12 @@
 
 <%= form_tag '/users', method: :post do  %>
 
+  <img src="<%=@image%>">
+
+  <div>
+    Practice Name: <input type="text" name="practice_name" value='<%=@practice_name%>'>
+  </div>
+
   <div>
     First Name: <input type="text" name="first_name" value='<%=@first_name%>'>
   </div>
@@ -13,7 +19,23 @@
   </div>
 
   <div>
-    Address: <input type="text" name="address" value='<%=@address%>'>
+    Credentials: <input type="text" name="credentials" value='<%=@credentials%>'>
+  </div>
+
+ <!--  <div>
+    Specialty: <input type="text" name="specialty" value='<%=@specialty%>'>
+  </div> -->
+
+  <div>
+    Phone: <input type="text" name="phone" value='<%=@phone%>'>
+  </div>
+
+  <div>
+    Address 1: <input type="text" name="address_1" value='<%=@address_1%>'>
+  </div>
+
+  <div>
+    Address 2: <input type="text" name="address_2" value='<%=@address_2%>'>
   </div>
 
   <div>
@@ -29,7 +51,7 @@
   </div>
 
   <div>
-    Phone: <input type="text" name="phone" value='<%=@phone%>'>
+    Bio: <textarea name="bio" > <%=@bio%> </textarea>  
   </div>
 
   <div>
