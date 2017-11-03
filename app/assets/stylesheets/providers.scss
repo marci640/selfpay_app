@@ -6,3 +6,27 @@ ul.provider_summary {
   list-style-type: square;
   list-style-position: inside;
 }
+
+.profile-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.profile-show-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.profile-title {
+    color: grey;
+    font-size: 18px;
+}
+
+
+.profile-a:hover, a:hover {
+    opacity: 0.7;
+}

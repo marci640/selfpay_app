@@ -37,4 +37,11 @@ class ProvidersController < ApplicationController
     @provider = User.find(params[:id])
   end 
 
+  def search 
+    @providers = User.where("last_name LIKE ?","%#{params[:search]}%")
+    render "index.html.erb"
+  end 
+
+  
+
 end

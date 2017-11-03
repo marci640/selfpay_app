@@ -1,6 +1,19 @@
-Here is a list of Providers: 
 
-<% @providers.each do |provider| %>
-  <%= provider.first_name %>
-  <%= provider.last_name %>
-<%end%>
+
+<!-- Profile Cards -->
+<div class="row">
+    <% @providers.each do |provider| %>
+      <div class="col-sm-6">
+        <div class="profile-card">
+          <img src="https://www.w3schools.com/w3images/team2.jpg" alt="doctor photo" style="width:100%">
+            <h1> <a href="/providers/<%=provider.id %>"> <%=provider.first_name%> <%=provider.last_name%> </a> </h1>
+            <p class="profile-title"> <%=provider.specialty%> </p>
+            <p> <%=number_to_phone(provider.phone)%> </p>
+            <div>
+            </div>
+        </div>
+      </div>
+    <%end%>
+
+
+  

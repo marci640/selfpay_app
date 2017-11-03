@@ -1,0 +1,54 @@
+
+<h3> Edit as necessary and click submit. </h3>
+
+<%= form_tag '/providers', method: :patch do  %>
+
+  <div>
+    First Name: <input type="text" name="first_name" value='<%=@user.first_name%>'>
+  </div>
+
+  <div>
+    Last Name: <input type="text" name="last_name" value='<%=@user.last_name%>'>
+  </div>
+
+  <div>
+    Credentials: <input type="text" name="credential" value='<%=@user.credential%>'>
+  </div>
+
+  <div>
+    Phone: <input type="text" name="phone" value='<%=@user.phone%>'>
+  </div>
+
+  <div>
+    Address 1: <input type="text" name="address_1" value='<%=@user.address_1%>'>
+  </div>
+
+  <div>
+    Address 2: <input type="text" name="address_2" value='<%=@user.address_2%>'>
+  </div>
+
+  <div>
+    City: <input type="text" name="city" value='<%=@user.city%>'>
+  </div>
+
+  <div>
+    State: <input type="text" name="state" value='<%=@user.state%>'>
+  </div>
+
+  <div>
+    Zipcode: <input type="text" name="zipcode" value='<%=@user.zipcode.slice(0,5)%>'>
+  </div>
+  
+  <div>
+    Specialty: <input name="specialty" class="awesomplete" value='@user.specialty'
+         data-list="Acupuncturist, Allergist, Audiologist, Cardiologist, Chiropractor, Dentist, Dermatologist, Dietitian, Ear, Nose & Throat Doctor, Endocrinologist, Eye Doctor, Family Physician, Gastroenterologist, Hand Surgeon, Hearing Specialist, Hematologist, Infectious Disease Specialist, Infertility Specialist, Internist, Nephrologists, Neurologists, Neurosurgeon, Nurse Practitioner, Nutritionist, OB-GYN, Oncologist, Ophthalmologist, Optometrist, Oral Surgeon, Orthodontist, Orthopedic Surgeon, Pain Management Specialist, Pediatric Dentist, Pediatrician, Periodontist, Physical Therapist, Plastic Surgeon, Podiatrist, Psychiatrist, Psychologist, Pulmonologist, Radiologist, Rheumatologist, Sleep Medicine Specialist, Sports Medicine Specialist, Surgeon, Therapist / Counselor, Urgent Care Specialist, Urologist" />
+  </div>
+
+  <div>
+    Email: <input type="email" name="email" value='<%=@user.email%>'>
+  </div>
+
+
+  <input type="submit" value="Submit">
+
+<% end %>
