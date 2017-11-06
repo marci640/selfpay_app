@@ -57,6 +57,13 @@
     Confirm Password: <input type="password" name="password_confirmation">
   </div>
 
+  <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+    <label class="form-check-label">
+      <%= hidden_field_tag :active, false %>
+      <%= check_box_tag :active, checked = true %> Active (You will be listed as a participating provider - you can change this anytime.) </br></br>
+    </label>
+  </div>
+
   <input type="submit" value="Submit">
 
 <% end %>

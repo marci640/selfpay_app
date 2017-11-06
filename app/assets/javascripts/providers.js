@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
  var app = new Vue({
    el: '#app',
    data: {
-     message: 'Hello Vue!'
+     message: 'Here are all of the participating providers:'
    },
    mounted: function() {
 
@@ -16,4 +16,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
    }
  });
 });
-

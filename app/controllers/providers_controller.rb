@@ -1,7 +1,7 @@
 class ProvidersController < ApplicationController
   
   def index
-    @providers = User.all 
+    @providers = User.where(active: true) 
   end
 
   def new
@@ -33,15 +33,9 @@ class ProvidersController < ApplicationController
     @arrays = codes_array.zip(selfpay_amounts)
   end 
 
-  def show
-    @provider = User.find(params[:id])
-  end 
-
   def search 
     @providers = User.where("last_name LIKE ?","%#{params[:search]}%")
     render "index.html.erb"
   end 
-
-  
 
 end

@@ -1,7 +1,7 @@
 
 <h3> Edit as necessary and click submit. </h3>
 
-<%= form_tag '/providers', method: :patch do  %>
+<%= form_tag "/users/#{@user.id}", method: :patch do  %>
 
   <div>
     First Name: <input type="text" name="first_name" value='<%=@user.first_name%>'>
@@ -40,14 +40,20 @@
   </div>
   
   <div>
-    Specialty: <input name="specialty" class="awesomplete" value='@user.specialty'
+    Specialty: <input name="specialty" class="awesomplete" value='<%=@user.specialty%>'
          data-list="Acupuncturist, Allergist, Audiologist, Cardiologist, Chiropractor, Dentist, Dermatologist, Dietitian, Ear, Nose & Throat Doctor, Endocrinologist, Eye Doctor, Family Physician, Gastroenterologist, Hand Surgeon, Hearing Specialist, Hematologist, Infectious Disease Specialist, Infertility Specialist, Internist, Nephrologists, Neurologists, Neurosurgeon, Nurse Practitioner, Nutritionist, OB-GYN, Oncologist, Ophthalmologist, Optometrist, Oral Surgeon, Orthodontist, Orthopedic Surgeon, Pain Management Specialist, Pediatric Dentist, Pediatrician, Periodontist, Physical Therapist, Plastic Surgeon, Podiatrist, Psychiatrist, Psychologist, Pulmonologist, Radiologist, Rheumatologist, Sleep Medicine Specialist, Sports Medicine Specialist, Surgeon, Therapist / Counselor, Urgent Care Specialist, Urologist" />
   </div>
 
   <div>
     Email: <input type="email" name="email" value='<%=@user.email%>'>
   </div>
-
+  
+  <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+    <label class="form-check-label">
+      <%= hidden_field_tag :active, false %>
+      <%= check_box_tag :active, checked = true, @user.active %> Active</br></br>
+    </label>
+  </div>
 
   <input type="submit" value="Submit">
 
