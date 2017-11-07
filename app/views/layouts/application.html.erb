@@ -3,23 +3,23 @@
   <head>
     <title>SelfpayApp</title>
     <%= csrf_meta_tags %>
-
+    <!-- JS moved to body per vuejs-rails-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% flash.each do |name, message| %>
       <div class="alert alert-<%=name%> alert-dismissible fade show" role="alert">
-             <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                 <span aria-hidden="true">&times;</span>
-               </button>
-               <%= message %>
-             </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+        <span aria-hidden="true">&times;</span>
+        </button>
+        <%= message %>
+      </div>
     <% end %>
 
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -35,20 +35,17 @@
           <li class="nav-item">
             <a class="nav-link" href="/login"> Provider Login</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout"> Provider Logout</a>
-          </li>
+
+          <% if current_user %>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout"> Provider Logout</a>
+            </li>
+          <% end %>
+
           <li class="nav-item">
             <a class="nav-link" href="/providers/new"> Provider Signup</a>
           </li>
         </ul>
-      <!--    <%= form_tag "/search", method: :post do %>
-         <form class="form-inline my-2 my-lg-0">
-         <%= text_field_tag :search %>
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-         <%end%> -->
-        </form>
       </div>
     </nav>
 

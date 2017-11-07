@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  
+
+  before_action :authenticate_user!, except: [:new, :create]
+
   def new
     npi = params[:npi]
     @provider = BloomApi.find_by_npi(npi)

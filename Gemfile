@@ -16,8 +16,6 @@ gem 'seed_dump'
 gem 'unirest', '~> 1.1.2'
 # Testing the vue gem
 gem 'vuejs-rails'
-# env gem
-gem 'dotenv-rails'
 # Bootstrap & jquery
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
@@ -50,6 +48,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
+  # env gem
+  gem 'dotenv-rails'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end

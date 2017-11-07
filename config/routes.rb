@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   get "/rates" => "rates#index"
-  # homepage for site -
+  # homepage for site 
   get "/rates/new" => "rates#new"
   # form for patient to compare rates 
   post "/rates" => "rates#create"
