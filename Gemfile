@@ -19,6 +19,8 @@ gem 'vuejs-rails'
 # Bootstrap & jquery
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+# Awesomefont for icons and such
+gem 'font-awesome-sass'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server

@@ -39,4 +39,10 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
   # user/provider logs out and sent to login page 
 
+  namespace :api do 
+    namespace :v1 do 
+      get '/providers' => 'providers#index'
+    end
+  end 
+
 end
