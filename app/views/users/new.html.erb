@@ -1,3 +1,4 @@
+
 <h1>Signup!</h1>
 
 <h3> Edit as necessary and click submit. </h3>
@@ -5,56 +6,56 @@
 <%= form_tag '/users', method: :post do  %>
 
   <div>
-    First Name: <input type="text" name="first_name" value='<%=@provider.first_name%>'>
+    First Name: <input type="text" name="first_name" value='<%=@user.first_name%>' required>
   </div>
 
   <div>
-    Last Name: <input type="text" name="last_name" value='<%=@provider.last_name%>'>
+    Last Name: <input type="text" name="last_name" value='<%=@user.last_name%>' required>
   </div>
 
   <div>
-    Credentials: <input type="text" name="credential" value='<%=@provider.credential%>'>
+    Credential: <input type="text" name="credential" value='<%=@user.credential%>' required>
   </div>
 
   <div>
-    Phone: <input type="text" name="phone" value='<%=@provider.business_address.phone%>'>
+    Phone: <input type="text" name="phone" value='<%= @user.phone %>' required>
   </div>
 
   <div>
-    Address 1: <input type="text" name="address_1" value='<%=@provider.business_address.line1%>'>
+    Address 1: <input type="text" name="address_1" value='<%= @user.address_1 %>' required>
   </div>
 
   <div>
-    Address 2: <input type="text" name="address_2" value='<%=@provider.business_address.line2%>'>
+    Address 2: <input type="text" name="address_2" value='<%=@user.address_2%>'>
   </div>
 
   <div>
-    City: <input type="text" name="city" value='<%=@provider.business_address.city%>'>
+    City: <input type="text" name="city" value='<%=@user.city%>' required>
   </div>
 
   <div>
-    State: <input type="text" name="state" value='<%=@provider.business_address.state%>'>
+    State: <input type="text" name="state" value='<%=@user.state%>' required>
   </div>
 
   <div>
-    Zipcode: <input type="text" name="zipcode" value='<%=@provider.business_address.zip.slice(0,5)%>'>
+    Zipcode: <input type="text" name="zipcode" value='<%=@user.zipcode%>' required>
   </div>
   
   <div>
     Specialty: <input name="specialty" class="awesomplete"
-         data-list="Acupuncturist, Allergist, Audiologist, Cardiologist, Chiropractor, Dentist, Dermatologist, Dietitian, Ear, Nose & Throat Doctor, Endocrinologist, Eye Doctor, Family Physician, Gastroenterologist, Hand Surgeon, Hearing Specialist, Hematologist, Infectious Disease Specialist, Infertility Specialist, Internist, Nephrologists, Neurologists, Neurosurgeon, Nurse Practitioner, Nutritionist, OB-GYN, Oncologist, Ophthalmologist, Optometrist, Oral Surgeon, Orthodontist, Orthopedic Surgeon, Pain Management Specialist, Pediatric Dentist, Pediatrician, Periodontist, Physical Therapist, Plastic Surgeon, Podiatrist, Psychiatrist, Psychologist, Pulmonologist, Radiologist, Rheumatologist, Sleep Medicine Specialist, Sports Medicine Specialist, Surgeon, Therapist / Counselor, Urgent Care Specialist, Urologist" />
+         data-list="Acupuncturist, Allergist, Audiologist, Cardiologist, Chiropractor, Dentist, Dermatologist, Dietitian, Ear, Nose & Throat Doctor, Endocrinologist, Eye Doctor, Family Physician, Gastroenterologist, General Surgeon, Hand Surgeon, Hearing Specialist, Hematologist, Infectious Disease Specialist, Infertility Specialist, Internist, Nephrologists, Neurologists, Neurosurgeon, Nurse Practitioner, Nutritionist, OB-GYN, Oncologist, Ophthalmologist, Optometrist, Oral Surgeon, Orthodontist, Orthopedic Surgeon, Pain Management Specialist, Pediatric Dentist, Pediatrician, Periodontist, Physical Therapist, Plastic Surgeon, Podiatrist, Psychiatrist, Psychologist, Pulmonologist, Radiologist, Rheumatologist, Sleep Medicine Specialist, Sports Medicine Specialist, Surgeon, Therapist / Counselor, Urgent Care Specialist, Urologist" / required>
   </div>
 
   <div>
-    Email: <input type="email" name="email">
+    Email: <input type="email" name="email" required>
   </div>
 
   <div>
-    Password: <input type="password" name="password">
+    Password: <input type="password" name="password" required>
   </div>
 
   <div>
-    Confirm Password: <input type="password" name="password_confirmation">
+    Confirm Password: <input type="password" name="password_confirmation" required>
   </div>
 
   <div class="form-check mb-2 mr-sm-2 mb-sm-0">

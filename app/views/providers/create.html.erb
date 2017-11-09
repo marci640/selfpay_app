@@ -32,12 +32,16 @@
 </ul>
 
 
-<p> To participate as a SelfPay Provider enter your NPI and click Continue. </p>
+<p> To participate as a SelfPay Provider enter your individual NPI and click Continue. </p>
+
 
 <%= form_tag "/signup", method: :get do %>
   <input type="text" class="form-control" name="npi" placeholder="NPI" >
   <button class="btn btn-primary" type="submit">Continue</button>
 <%end%>
+
+
+
 
 
 

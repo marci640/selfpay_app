@@ -4,34 +4,53 @@ class UsersController < ApplicationController
 
   def new
     npi = params[:npi]
-    @provider = BloomApi.find_by_npi(npi)
+    provider = BloomApi.find_by_npi(npi)
+    @user = User.new 
+    if provider && provider.type == 'individual'
+      @user.first_name = provider.first_name
+      @user.last_name = provider.last_name
+      @user.credential = provider.credential
+      @user.phone = provider.business_address.phone
+      @user.address_1 = provider.business_address.line1
+      @user.address_2 = provider.business_address.line2
+      @user.city = provider.business_address.city
+      @user.state = provider.business_address.state
+      @user.zipcode = provider.business_address.zip.slice(0,5)
+    else 
+      flash[:warning] = 'Invalid NPI - Please complete form'
+    end 
   end
 
   def create
-    user = User.new(
-      first_name: params[:first_name].titleize,
-      last_name: params[:last_name].titleize,
-      credential: params[:credential],
-      phone: params[:phone],
-      address_1: params[:address_1].titleize,
-      address_2: params[:address_2].titleize,
-      city: params[:city].titleize,
-      state: params[:state],
-      zipcode: params[:zipcode],
-      active: params[:active],
-      email: params[:email],
-      specialty: params[:specialty],
-      password: params[:password],
-      password_confirmation: params[:password_confirmation]
-    )
-    if user.save
-      session[:user_id] = user.id
-      flash[:success] = 'Successfully created account!'
-      redirect_to "/users/#{user.id}"
-    else
-      flash[:warning] = 'Invalid email or password!'
-      redirect_to '/signup'
-    end
+    if @provider == nil
+      flash[:warning] = 'Invalid NPI'
+      redirect_to '/providers/new'
+    else 
+      user = User.new(
+        first_name: params[:first_name].titleize,
+        last_name: params[:last_name].titleize,
+        credential: params[:credential],
+        phone: params[:phone],
+        address_1: params[:address_1].titleize,
+        address_2: params[:address_2].titleize,
+        city: params[:city].titleize,
+        state: params[:state],
+        zipcode: params[:zipcode],
+        active: params[:active],
+        email: params[:email],
+        specialty: params[:specialty],
+        password: params[:password],
+        password_confirmation: params[:password_confirmation]
+      )
+      if user.save
+        session[:user_id] = user.id
+        flash[:success] = 'Successfully created account!'
+        redirect_to "/users/#{user.id}"
+      else
+        flash[:warning] = 'Invalid email or password!'
+        redirect_to '/signup'
+      end
+    end 
   end
 
   def show

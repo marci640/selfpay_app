@@ -1,9 +1,27 @@
 <div id="app">
   
+  <div>
+    <button v-on:click="setSortAttribute('last_name')"> Sort by Last Name </button>
+    <button v-on:click="setSortAttribute('specialty')"> Sort by Specialty </button>
+  </div>
+
+  <br> 
+
+  <div>
+    <input v-model="lastNameFilter" placeholder="Search Provider Name">
+    <input v-model="specialtyFilter" placeholder="Search Specialty">
+    <input v-model="cityFilter" placeholder="Search City">
+    <input v-model="stateFilter" placeholder="Search State">
+  </div>
+    
+
+  <br> 
+
+
   <div class="row">
-    <div v-for="provider in providers">
+    <div v-for="provider in modifiedProviders" v-if="filter(provider)" >
       <div class="col-sm-6">
-        <div class="card">
+        <div class="card" style="width: 20rem;">
           <i class="fa fa-user-md" style="font-size:64px;color:#5bc0de"></i>
           <h4> {{ provider.first_name }} {{ provider.last_name }}, {{ provider.credential }} </h4>
           <p class="profile-title"> Specialty: {{ provider.specialty }} <br>
@@ -18,40 +36,4 @@
   </div>
 
 
-
-
-<div class="card-deck">
-  <div v-for="provider in providers">
-    <div class="card">
-      <i class="fa fa-user-md" style="font-size:64px;color:#5bc0de"></i>
-      <div class="card-block">
-        <h4 class="card-title"> {{ provider.first_name }} {{ provider.last_name }}, {{ provider.credential }} </h4>
-        <p class="card-text"> Specialty: {{ provider.specialty }} </p>
-      </div>
-    </div>
-</div>
-
-</div>
-
-
-
-
-<!-- Profile Cards -->
-
-<div class="row">
-  <% @providers.each do |provider| %>
-    <div class="col-sm-6">
-      <div class="card">
-        <i class="fa fa-user-md" style="font-size:64px;color:#5bc0de"></i>
-        <h4> <%=provider.first_name%> <%=provider.last_name%>, <%=provider.credential%> </h4>
-        <p class="profile-title"> Specialty: <%=provider.specialty%> <br>
-            <%=provider.address_1%> <%=provider.address_2%> <br>
-            <%=provider.city%>, <%=provider.state%> <%=provider.zipcode%> <br>
-            <%=number_to_phone(provider.phone)%> 
-        </p>
-      </div>
-      <br>
-    </div>
-  <%end%>
-</div>
 

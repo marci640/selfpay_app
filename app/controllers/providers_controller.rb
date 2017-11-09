@@ -1,7 +1,6 @@
 class ProvidersController < ApplicationController
   
   def index
-    @providers = User.where(active: true) 
   end
 
   def new
