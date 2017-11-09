@@ -1,48 +1,23 @@
+<h1> Edit Account </h1>
+
+<% if @user && @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibitied this user from being saved:</h2>
+
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
 <h3> Edit as necessary and click submit. </h3>
 
 <%= form_tag "/users/#{@user.id}", method: :patch do  %>
 
-  <div>
-    First Name: <input type="text" name="first_name" value='<%=@user.first_name%>' required>
-  </div>
-
-  <div>
-    Last Name: <input type="text" name="last_name" value='<%=@user.last_name%>' required>
-  </div>
-
-  <div>
-    Credential: <input type="text" name="credential" value='<%=@user.credential%>' required>
-  </div>
-
-  <div>
-    Phone: <input type="text" name="phone" value='<%=number_to_phone(@user.phone)%>' required>
-  </div>
-
-  <div>
-    Address 1: <input type="text" name="address_1" value='<%=@user.address_1%>' required>
-  </div>
-
-  <div>
-    Address 2: <input type="text" name="address_2" value='<%=@user.address_2%>'>
-  </div>
-
-  <div>
-    City: <input type="text" name="city" value='<%=@user.city%>' required>
-  </div>
-
-  <div>
-    State: <input type="text" name="state" value='<%=@user.state%>' required>
-  </div>
-
-  <div>
-    Zipcode: <input type="text" name="zipcode" value='<%=@user.zipcode.slice(0,5)%>' required>
-  </div>
-  
-  <div>
-    Specialty: <input name="specialty" class="awesomplete" value='<%=@user.specialty%>' required 
-         data-list="Acupuncturist, Allergist, Audiologist, Cardiologist, Chiropractor, Dentist, Dermatologist, Dietitian, Ear, Nose & Throat Doctor, Endocrinologist, Eye Doctor, Family Physician, Gastroenterologist, Hand Surgeon, Hearing Specialist, Hematologist, Infectious Disease Specialist, Infertility Specialist, Internist, Nephrologists, Neurologists, Neurosurgeon, Nurse Practitioner, Nutritionist, OB-GYN, Oncologist, Ophthalmologist, Optometrist, Oral Surgeon, Orthodontist, Orthopedic Surgeon, Pain Management Specialist, Pediatric Dentist, Pediatrician, Periodontist, Physical Therapist, Plastic Surgeon, Podiatrist, Psychiatrist, Psychologist, Pulmonologist, Radiologist, Rheumatologist, Sleep Medicine Specialist, Sports Medicine Specialist, Surgeon, Therapist / Counselor, Urgent Care Specialist, Urologist" />
-  </div>
+  <%= render "form" %>
+  <!-- see form partial in view/users -->
 
   <div>
     Email: <input type="email" name="email" value='<%=@user.email%>' required >
@@ -51,7 +26,7 @@
   <div class="form-check mb-2 mr-sm-2 mb-sm-0">
     <label class="form-check-label">
       <%= hidden_field_tag :active, false %>
-      <%= check_box_tag :active, checked = true, @user.active %> Active</br></br>
+      <%= check_box_tag :active, checked = true, @user.active %> Active (You will be listed as a participating provider - you can change this anytime.) </br></br>
     </label>
   </div>
 

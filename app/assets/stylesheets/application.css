@@ -16,7 +16,8 @@
 
 
 .container {
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: consolas, courier, monaco, menlo, monospace;
+  /*font-family: Futura, "Trebuchet MS", Arial, sans-serif;*/
 }
 
 .nav  {

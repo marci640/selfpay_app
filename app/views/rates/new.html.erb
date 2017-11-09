@@ -1,15 +1,36 @@
+
 <h2> Negotiate your Hospital Bills </h2>
+
+<br>
+
+<p> Note: If your bill does not include procedure codes (5 digit CPT codes) click <a href="/letters">here</a> to generate a letter requesting an itemized statement</p>
+<hr>
+
+<div id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="card">
+    <div class="card-header" role="tab" id="headingOne">
+      <!-- <h5 class="mb-0"> -->
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          What is a CPT code? 
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="card-block">
+        A procedure code or CPT code is usually a 5 digit code, but can be alphanumeric. CPT codes are used in medical billing practices to identify what procedures were performed. Example: 99213 is an office visit for an established patient. Often, hospitals fail to provide procedure codes in their billing statements, so be sure to request an itemized statement so you know what you're paying for! 
+      </div>
+    </div>
+  </div>
+</div>
 
 <p> Complete the form to compare your hospital bill with Medicare's reimbursement rates for your area and/or generate a negotiation letter to send to your hospital</p>
 
 
-<!-- <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="A CPT code is usually 5 digits and can be alphanumeric. Example: 99213 is an office visit for an established patient.">Click to learn more</button> -->
-
-<br>
-
 <%= form_tag "/rates", method: :post do %>
 
-  <form class="form_container">
+<form> 
+  <div class="form-group">
     <div class="row">
       <div class="col-sm-4 mb-4">
        <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" >
@@ -23,9 +44,6 @@
         <input id="search_term" class="form-control" type="text" name="hospital" placeholder="Hospital" >
       </div>
     </div>
-
-    <p> Note: If your bill does not include procedure codes (5 digit CPT codes) click <a href="/letters">here</a> to generate a letter requesting an itemized statement</p>
-    <hr>
 
     <%index = 1 %>
     <% 8.times do %>
@@ -41,7 +59,7 @@
     <%end%>
 
     <button class="btn btn-primary" type="submit">Submit form</button>
-
+  </div>
   </form>
 
 <% end %>

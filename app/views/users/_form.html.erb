@@ -1,0 +1,43 @@
+  
+  <div>
+    First Name: <input type="text" name="first_name" value='<%=@user.first_name%>' required>
+  </div>
+
+  <div>
+    Last Name: <input type="text" name="last_name" value='<%=@user.last_name%>' required>
+  </div>
+
+  <div>
+    Credential: <input type="text" name="credential" value='<%=@user.credential%>' required>
+  </div>
+
+  <div>
+    Phone: <input type="text" name="phone" value='<%=number_to_phone(@user.phone)%>' required>
+  </div>
+
+  <div>
+    Address 1: <input type="text" name="address_1" value='<%= @user.address_1 %>' required>
+  </div>
+
+  <div>
+    Address 2: <input type="text" name="address_2" value='<%=@user.address_2%>'>
+  </div>
+
+  <div>
+    City: <input type="text" name="city" value='<%=@user.city%>' required>
+  </div>
+
+  <div>
+    State: <input type="text" name="state" value='<%=@user.state%>' required>
+  </div>
+
+  <div>
+    Zipcode: <input type="text" name="zipcode" value='<%=@user.zipcode%>' required>
+  </div>
+  
+  <div>
+    Specialty: <input name="specialty" class="awesomplete"
+         data-list="Acupuncturist, Allergist, Audiologist, Cardiologist, Chiropractor, Dentist, Dermatologist, Dietitian, Ear, Nose & Throat Doctor, Endocrinologist, Eye Doctor, Family Physician, Gastroenterologist, General Surgeon, Hand Surgeon, Hearing Specialist, Hematologist, Infectious Disease Specialist, Infertility Specialist, Internist, Nephrologists, Neurologists, Neurosurgeon, Nurse Practitioner, Nutritionist, OB-GYN, Oncologist, Ophthalmologist, Optometrist, Oral Surgeon, Orthodontist, Orthopedic Surgeon, Pain Management Specialist, Pediatric Dentist, Pediatrician, Periodontist, Physical Therapist, Plastic Surgeon, Podiatrist, Psychiatrist, Psychologist, Pulmonologist, Radiologist, Rheumatologist, Sleep Medicine Specialist, Sports Medicine Specialist, Surgeon, Therapist / Counselor, Urgent Care Specialist, Urologist" / required>
+  </div>
+
+ 

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#accordion {
+  width: 400px;  
+}
+
 form.form_container{
   border-style: groove;
 }
@@ -9,6 +13,10 @@ form.form_container{
 // rate difference conditional 
 td.difference{
   color: green; 
+}
+
+.form_container {
+  background-color: rgba(0,0,1,0.8);
 }
 
 .landing {
@@ -30,6 +38,7 @@ td.difference{
     position: relative;
 }
 
+// trasparent full width bar
 .title-section {
   background-color:rgba(0,0,1,0.8);
   padding: 20px;
@@ -39,17 +48,17 @@ td.difference{
   height: 280px; 
 }
 
+// Title text and name of site
 .landing-h1 {
   color: #DCE6EF;
-  font-family: 'Georgia', Georgia, serif;
   font-weight: 100;
   font-size: 60px;
   margin: 0px;
 }
 
+// subheading
 .landing-text {
-  color: #DCE6EF;
-  font-family: 'Georgia', Georgia, serif;
+  color: #DCE6EF; 
   font-weight: 100;
   font-size: 28px;
   margin: 0px; 
@@ -63,9 +72,63 @@ td.difference{
     left: 50%;
     margin-left: -3px;  
 }
+
+.landing-a {
+  color: #DCE6EF !important;
+
+}
   
 .landing-a:hover {
-    text-shadow: 0 0 5px #DCE6EF;
+    text-shadow: 0 0 5px #DCE6EF !important;
+    font-size:1.0em;
+    text-decoration: none;
 }
 
+.btn-2 {
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 5px;
+}
+
+.btn-2:after,
+.btn-2:before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.btn-2:hover:after,
+.btn-2:hover:before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.btn-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+}
+
+.button-position {
+    position: relative;
+}
+
+.layout-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
 
