@@ -6,12 +6,14 @@
     display: none;
   }
   input,
-  textarea {
+  textarea, .nav, li {
     border: none !important;
     box-shadow: none !important;
     outline: none !important;
+    margin-left: 0;
   }
 }
+
 
 .letter {
   background: white;

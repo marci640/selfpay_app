@@ -7,13 +7,13 @@ class UsersController < ApplicationController
     provider = BloomApi.find_by_npi(npi)
     @user = User.new 
     if provider && provider.type == 'individual'
-      @user.first_name = provider.first_name
-      @user.last_name = provider.last_name
+      @user.first_name = provider.first_name.titleize 
+      @user.last_name = provider.last_name.titleize
       @user.credential = provider.credential
       @user.phone = provider.business_address.phone
-      @user.address_1 = provider.business_address.line1
+      @user.address_1 = provider.business_address.line1.titleize
       @user.address_2 = provider.business_address.line2
-      @user.city = provider.business_address.city
+      @user.city = provider.business_address.city.titleize
       @user.state = provider.business_address.state
       @user.zipcode = provider.business_address.zip.slice(0,5)
     else 
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       flash[:warning] = 'Invalid email or password!'
-      redirect_to '/signup'
+      redirect_to '/providers/new'
     end
   end 
 

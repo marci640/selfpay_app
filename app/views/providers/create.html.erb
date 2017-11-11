@@ -1,6 +1,6 @@
-<h3> SelfPay Rates: </h3>
-
 <br>
+
+<h3> SelfPay Rates: </h3>
 
   <table class="table table-hover">
     <thead>
@@ -23,24 +23,17 @@
 <hr>
 <!-- line break --> 
 
-<p> By signing up: </p> 
-<ul class= "provider_summary">
-  <li> Potential SelfPay patients will see your practice listed as a participating provider </li>
-  <li> Your agree to bill SelfPay patients at the SelfPay rate </li>
-  <li> SelfPay patients can mention this site to receive the discount </li>
-  <li> Come and go as a you wish - signing up and canceling is done with the click of a button </li>
-</ul>
 
-
-<p> To participate as a SelfPay Provider enter your individual NPI and click Continue. </p>
+<p> To participate as a SelfPay Provider enter your individual NPI # and click Continue. </p>
 
 
 <%= form_tag "/signup", method: :get do %>
   <input type="text" class="form-control" name="npi" placeholder="NPI" >
+  <br>
   <button class="btn btn-primary" type="submit">Continue</button>
 <%end%>
 
-
+<br>
 
 
 

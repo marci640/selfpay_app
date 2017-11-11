@@ -20,6 +20,18 @@
   /*font-family: Futura, "Trebuchet MS", Arial, sans-serif;*/
 }
 
-.nav  {
-  display:inline-block;
+.navbar-brand>img {
+  height: 50%;
+  width: auto;
 }
+
+.nav {
+  background-color: light-black;
+}
+
+.nav li {
+  color: #DCE6EF !important;
+  padding-left: 10px;
+}
+
+

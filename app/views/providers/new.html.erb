@@ -1,24 +1,22 @@
-<h2> Become a "Self Pay" Provider! </h2>
-
 <br>
-
-<p> Enter your zipcode and your most commonly billed CPT codes to see Self Pay's Rates. </p>
+<h2> Become a "Self Pay" Provider! </h2>
+<br>
 
 <%= form_tag "/providers", method: :post do %>
 
   <form class="form_container">
     <div class="row">
       <div class="col-sm-3 mb-3">
-        <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" >
+        <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" required>
       </div>
-      Note: Self Pay Rates are Medicare's Non-Facility Rates + 15%
+      <p> Enter your <strong> zipcode </strong> and your most commonly billed <strong> CPT codes </strong> to see Self Pay's Rates. </p>
     </div>
 
     <div class="row">
       <%index = 1 %>
       <% 8.times do %>
         <div class="col-sm-3 mb-3">
-          <input type="text" class="form-control" name="procedure_code<%=index%>" placeholder="CPT Code" >
+          <input type="text" class="form-control" name="procedure_code<%=index%>" placeholder="CPT Code">
           <% index += 1 %>
         </div>
       <%end%>
@@ -27,8 +25,17 @@
     <button class="btn btn-primary" type="submit">Submit form</button>
 
   </form>
-
 <% end %>
+
+<br> 
+<p> What does it mean to be a self pay provider? </p> 
+<ul class= "provider_summary">
+  <li> Potential Self Pay patients will see you listed as a participating provider </li>
+  <li> You agree to bill Self Pay patients at the Self Pay rate </li>
+  <li> Self Pay Rates are Medicare's Non-Facility Rates +15% </li>
+  <li> Self Pay patients can mention this site to receive the discount </li>
+  <li> Come and go as a you wish - signing up and canceling is done with the click of a button </li>
+</ul>
 
  
 
