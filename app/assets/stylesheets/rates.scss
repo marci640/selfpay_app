@@ -64,28 +64,52 @@
 
 
 // rate request page 
+
+// Colors
+$blue:#313A3D;
+$orange:#FD9638;
+$dark-orange:darken($orange, 20%);
+$grey:#B6B6B6;
+$light-grey:lighten($grey, 15%);
+
+$background:#efefef;
+$field-color:#E8E9EA;
+
 #accordion {
   padding-bottom: 10px; 
 }
 
 .rates-request {
-  // background-color: 
+  background-color: #efefef;
 }
 
 .form_container {
-  border-style: groove;
+  border-style: none;
   padding: 20px; 
   margin-bottom: 15px;
+  background: white;
+  // margin:60px auto 120px;
+  border-top:15px solid $blue;
 }
 
 .form-header {
   padding-left: 20px; 
+  font-family: 'lato'; 
 }
 
 .compare-rates-header{
   text-align: center; 
 }
 
+
+
+// ///////
+
+// Grid
+// @mixin grid($column) {
+//     width:(100% / 12) * $column;
+//     margin:0 auto;
+// }
 
 // end rate request page
 
