@@ -2,11 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @media print {
-  #hideForPrint {
+  #hideForPrint  {
     display: none;
   }
+
+  .topnav {
+    display: none;
+  }
+
+  
   input,
-  textarea, .nav, li {
+  textarea, li {
     border: none !important;
     box-shadow: none !important;
     outline: none !important;

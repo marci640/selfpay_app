@@ -5,8 +5,34 @@
     <%= csrf_meta_tags %>
     <!-- JS moved to body per vuejs-rails-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet" type="text/css">
   </head>
 
+      <div class="topnav" id="myTopnav">
+      <a href="/rates">Home </a>
+      <a href="/rates/new">Compare Rates</a>
+      <a href="/providers">Self-Pay Providers</a>
+      <% if current_user == nil %>
+        <a href="/login">Provider Login</a>
+        <a href="/providers/new">Provider Signup</a>
+      <% else %>
+        <a href="/logout">Provider Logout</a>
+        <a href="/users/<%=current_user.id%>">View My Account</a>
+      <% end %>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+  
   <body>
     <% flash.each do |name, message| %>
       <div class="alert alert-<%=name%> alert-dismissible fade show" role="alert">
@@ -16,37 +42,6 @@
         <%= message %>
       </div>
     <% end %>
-
-    <ul class="nav">
-     <!--  <a class="navbar-brand" href="#">
-         <%= image_tag 'logo.jpg' %> 
-       </a> -->
-      <li class="nav-item active">
-        <a class="nav-link" href="/rates">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/rates/new">Compare Rates</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/providers">Self-Pay Providers</a>
-      </li>
-
-      <% if current_user == nil %>
-        <li class="nav-item-provider">
-          <a class="nav-link" href="/login"> Provider Login</a>
-        </li>
-        <li class="nav-item-provider">
-          <a class="nav-link" href="/providers/new"> Provider Signup</a>
-        </li>
-      <% else %>
-        <li class="nav-item-provider">
-          <a class="nav-link" href="/logout"> Provider Logout</a>
-        </li>
-        <li class="nav-item-provider">
-          <a class="nav-link" href="/users/#{user.id}"> View My Account</a>
-        </li>
-      <% end %>
-    </ul>
 
     <div class="container">
       <%= yield %>

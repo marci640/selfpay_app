@@ -44,12 +44,11 @@
 
 // subheading
 .landing-text {
-  color: #DCE6EF; 
+  color: #8CA8AE; 
   font-weight: 100;
   font-size: 28px;
   margin: 0px; 
 }
-
 
 .landing-a {
   color: #DCE6EF !important;
@@ -65,58 +64,71 @@
 
 // rate request page 
 
-// Colors
-$blue:#313A3D;
-$orange:#FD9638;
-$dark-orange:darken($orange, 20%);
-$grey:#B6B6B6;
-$light-grey:lighten($grey, 15%);
+.form-control{
+    background-color: #efefef;
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+}
 
-$background:#efefef;
-$field-color:#E8E9EA;
 
-#accordion {
-  padding-bottom: 10px; 
+.sub-heading {
+  background-color: #8CA8AE; 
+  padding: 20px; 
+}
+
+.form-control::-webkit-input-placeholder {
+color: #454545;
+}
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
 }
 
 .rates-request {
-  background-color: #efefef;
+  background-color: #785964;
 }
 
-.form_container {
+.header_container {
+  border-style: none;
+  padding: 10px; 
+  margin-bottom: 15px;
+  background: white;
+  border-top:15px solid #454545;
+  margin: auto; 
+  text-align: center;
+}
+
+.rate_form_container {
   border-style: none;
   padding: 20px; 
   margin-bottom: 15px;
   background: white;
-  // margin:60px auto 120px;
-  border-top:15px solid $blue;
+  display:inline-block;
+  border-top:15px solid #454545;
+}
+
+.faq {
+  border-style: none;
+  margin-bottom: 10px;
+  width: 450px; 
+  background: white;
+  // display:inline-block;
+  border-top:15px solid #454545;
+  padding: 10px 0 10px 0;
 }
 
 .form-header {
-  padding-left: 20px; 
-  font-family: 'lato'; 
-}
-
-.compare-rates-header{
   text-align: center; 
+  margin: auto;
+  padding-bottom: 10px; 
 }
-
-
-
-// ///////
-
-// Grid
-// @mixin grid($column) {
-//     width:(100% / 12) * $column;
-//     margin:0 auto;
-// }
-
-// end rate request page
 
 
 // rate difference conditional for comparrison
 td.difference{
-  color: green; 
+  color: #339933;
 }
 
 

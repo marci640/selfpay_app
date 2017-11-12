@@ -1,7 +1,7 @@
 <br>
 
+<div class="header_container">
 <h3> How your bill compares to Medicare's rates: </h3>
-
 <br>
 
 <%= form_tag "/letters", method: :post do %>
@@ -45,7 +45,7 @@
 <%= button_to 'Generate Letter', "/letters", method: :post, params: { bill_id: @bill.id } %>
 <%end%>
 
-
+</div>
 
   
     
