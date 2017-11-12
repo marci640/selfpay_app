@@ -38,6 +38,10 @@ body {
 .topnav a:hover {
   background-color: #785964;
   color: #F1FFFA;
+  text-shadow: 0 0 1px #DCE6EF !important;
+  font-size:1.2em;
+  
+  /*text-decoration: underline;*/
 }
 
 .topnav .icon {
@@ -45,7 +49,7 @@ body {
 }
 
 a {
-  color: #1c294c;
+  color: black;
 }
 
 @media screen and (max-width: 600px) {
@@ -71,6 +75,7 @@ a {
 
 }
 
+/* perfect input box */
 .form-control:focus {
   border-color: none; 
   border: 1px solid transparent;

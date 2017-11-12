@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
 </head>  
 
+
 <div class="letter" >
   
   <div class="hr-theme-slash-2">
@@ -24,11 +25,11 @@
     <%end%>
     </ul>
 
-    <textarea rows="4" cols="30"> </textarea>
+    <textarea rows="4" cols="50" placeholder="Your address, ID#'s, etc. "> </textarea>
 
     <p> RE: Medical Debt Discount Request </p>
 
-    <p> Date(s) of service: <%=@dos%> </p>
+    <p> Date of service: <%=@dos%> </p>
 
     <p> Dear Billing Department, </p>
 
@@ -64,7 +65,10 @@
       </tbody>
     </table>
 
-    <input id="hideForPrint" type="button" value="Print" onclick="window.print();" />
+    <div class="form-actions">
+      <button class="btn btn-dark" onclick="window.print();" id="hideForPrint" type="submit">Print Letter</button>
+    </div>
+
 
   </div>
 

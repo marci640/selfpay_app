@@ -40,9 +40,12 @@
 
 <h3> Generate a Letter </h3>
 
-<p> To generate a price negotiation letter to <em><%=@hospital_address[0]%></em> for date(s) of service: <em><%=@bill.dos%></em>, checkmark the data you'd like to include and click the Generate Letter button. </p> 
+<p> To generate a price negotiation letter to <em><%=@hospital_address[0]%></em> for date of service: <em><%=@bill.dos%></em>, checkmark the data you'd like to include and click the Generate Letter button. </p> 
 
-<%= button_to 'Generate Letter', "/letters", method: :post, params: { bill_id: @bill.id } %>
+
+<%= button_to 'Generate Letter', "/letters", method: :post, params: { bill_id: @bill.id }  %>
+
+
 <%end%>
 
 </div>

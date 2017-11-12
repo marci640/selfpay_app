@@ -1,6 +1,8 @@
 // Place all the styles related to the Letters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// No print areas: 
 @media print {
   #hideForPrint  {
     display: none;
@@ -10,23 +12,56 @@
     display: none;
   }
 
-  
+  .form-actions {
+    display: none; 
+  }
+
   input,
-  textarea, li {
+  textarea, {
     border: none !important;
     box-shadow: none !important;
     outline: none !important;
     margin-left: 0;
   }
 }
+// End of no print areas 
 
+textarea:focus {
+  border-color: none; 
+  border: 1px solid transparent;
+  border-top: none;
+  outline: 0;
+  border-bottom: 1px solid #DDD;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+}
+
+input:focus {
+  border-color: none; 
+  border: 1px solid transparent;
+  border-top: none;
+  outline: 0;
+  border-bottom: 1px solid #DDD;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+}
+
+input {
+  width: 40%; 
+}
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+    color: #454545;
+}
 
 .letter {
   background: white;
   display: block;
   margin: 0 auto;
   padding: 15px; 
-  margin: 0.5cm;
+  margin-top: 20px; 
+  margin-bottom: 20px; 
   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
   width: 21cm;
   height: 26.7cm; 

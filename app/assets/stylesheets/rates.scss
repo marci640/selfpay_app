@@ -44,9 +44,9 @@
 
 // subheading
 .landing-text {
-  color: #8CA8AE; 
+  color: #785964; 
   font-weight: 100;
-  font-size: 28px;
+  font-size: 36px;
   margin: 0px; 
 }
 
@@ -73,7 +73,8 @@
 
 .sub-heading {
   background-color: #8CA8AE; 
-  padding: 20px; 
+  padding: 30px; 
+  box-shadow: inset 0 0 0 10px #8CA8AE, inset 0 0 0 14px #fff;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -84,6 +85,7 @@ color: #454545;
     margin: 0;
     background-color: transparent;
     text-align: center;
+    color: #454545;
 }
 
 .rates-request {
@@ -93,11 +95,12 @@ color: #454545;
 .header_container {
   border-style: none;
   padding: 10px; 
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   background: white;
   border-top:15px solid #454545;
-  margin: auto; 
+  // margin: auto; 
   text-align: center;
+  box-shadow: 0 0 30px black;
 }
 
 .rate_form_container {
@@ -107,6 +110,7 @@ color: #454545;
   background: white;
   display:inline-block;
   border-top:15px solid #454545;
+  box-shadow: 0 0 30px black;
 }
 
 .faq {
@@ -116,7 +120,8 @@ color: #454545;
   background: white;
   // display:inline-block;
   border-top:15px solid #454545;
-  padding: 10px 0 10px 0;
+  padding: 20px 0 20px 0;
+  box-shadow: 0 0 30px black;
 }
 
 .form-header {
@@ -125,11 +130,17 @@ color: #454545;
   padding-bottom: 10px; 
 }
 
+#headingOne, #headingTwo, #headingThree {
+  background-color: #8CA8AE;
+}
 
 // rate difference conditional for comparrison
 td.difference{
-  color: #339933;
+  color: #005000;
+  font-weight: bold; 
 }
+
+
 
 
 
