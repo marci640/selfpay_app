@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.1.4'
 # bloom api gem for provider info
 gem 'bloom_api'
+# scroll js animations 
+gem "scrollreveal-rails"
 # Seed dump gem for seed file
 gem 'seed_dump'
 # Unirest for API

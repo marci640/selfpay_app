@@ -1,9 +1,3 @@
-<style>
-  .nav {
-    display: none !important;
-  }
-</style>
-
 
   <div class="letter" >
 
@@ -19,7 +13,7 @@
 
     <p> <%= Time.now.strftime("%m/%d/%Y") %> </p>
 
-    <textarea rows="4" cols="30"> </textarea>
+    <textarea rows="4" cols="50"> </textarea>
 
     <br>
 
@@ -33,8 +27,12 @@
     <p> Sincerely, </p>
     ​
     <input type="text" >
+   
+   <br>
+   <br>
 
-
-    <input id="hideForPrint" type="button" value="Print" onclick="window.print();" />
+    <div class="form-actions">
+      <button class="btn btn-dark" onclick="window.print();" id="hideForPrint" type="submit">Print Letter</button>
+    </div>
 
   </div>

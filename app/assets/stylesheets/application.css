@@ -32,13 +32,12 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .topnav a:hover {
   background-color: #785964;
   color: #F1FFFA;
-  text-shadow: 0 0 1px #DCE6EF !important;
   font-size:1.2em;
   
   /*text-decoration: underline;*/

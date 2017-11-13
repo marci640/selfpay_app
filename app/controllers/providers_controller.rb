@@ -1,6 +1,7 @@
 class ProvidersController < ApplicationController
   
   def index
+    @key = ENV["ZIPCODE_API_KEY"];
   end
 
   def new

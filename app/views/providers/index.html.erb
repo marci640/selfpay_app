@@ -2,7 +2,9 @@
 
 <div id="app">
   
-  <div>
+  <input v-model="key" value="<%=@key%>" type="hidden">
+
+  <div class="sort_options">
     <button v-on:click="setSortAttribute('last_name')"> Sort by Last Name </button>
     <button v-on:click="setSortAttribute('specialty')"> Sort by Specialty </button>
   </div>
@@ -15,10 +17,13 @@
     <input v-model="cityFilter" placeholder="Search City">
     <input v-model="stateFilter" placeholder="Search State">
   </div>
-    
+
+  <div>
+    Zipcode <input v-model="zipcodeFilter">
+    <button v-on:click="setValidZipcode()">Search by Zipcode</button>
+  </div>
 
   <br> 
-
 
   <div class="row">
     <div v-for="provider in modifiedProviders" v-if="filter(provider)" >

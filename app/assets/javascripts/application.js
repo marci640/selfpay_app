@@ -16,3 +16,8 @@
 //= require bootstrap-sprockets
 //= require vue
 //= require_tree .
+//= require scrollReveal
+
+$(function() {
+  window.scrollReveal = new scrollReveal();
+});
