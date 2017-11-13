@@ -10,10 +10,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
      sortAscending: true,
      lastNameFilter: '',
      specialtyFilter: '',
-     stateFilter: '',
-     cityFilter: '',
      zipcodeFilter: '',
-     key: ''
+     key: '',
+     radius: '50'
    },
 
    mounted: function() {
@@ -34,11 +33,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
 
       setValidZipcode: function() { 
-        if(this.zipcodeFilter.length === 5)
-          $.get("https://www.zipcodeapi.com/rest/" + this.key + "/radius.json/" + this.zipcodeFilter + "/25/km?minimal", function(result) {
+        if(this.zipcodeFilter.length === 5) {
+          $.get("https://www.zipcodeapi.com/rest/" + this.key + "/radius.json/" + this.zipcodeFilter + "/" + this.radius + "/km?minimal", function(result) {
              this.zipcodes = result.zip_codes; 
          }.bind(this));
-        },
+        } 
+      },
 
       filter: function(provider) {
          if(this.zipcodes.length > 0){
@@ -46,11 +46,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
          } else {
           var validZipcode = provider.zipcode; 
          }
-         var validCity = provider.city.toLowerCase().indexOf(this.cityFilter.toLowerCase()) > -1;
-         var validState = provider.state.toLowerCase().indexOf(this.stateFilter.toLowerCase()) > -1;
          var validlastName = provider.last_name.toLowerCase().indexOf(this.lastNameFilter.toLowerCase()) > -1;
          var validSpecialty = provider.specialty.toLowerCase().indexOf(this.specialtyFilter.toLowerCase()) > -1;
-         return validCity && validlastName && validState && validSpecialty && validZipcode 
+         return validlastName && validSpecialty && validZipcode 
       }
 
    },

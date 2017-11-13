@@ -29,6 +29,7 @@
   padding: 20px;
   width: 100%;
   margin: 100px auto;
+  margin-top: 270px; 
   text-align: center; 
   height: 280px; 
 }
@@ -96,7 +97,7 @@ color: #454545;
   margin-bottom: 20px;
   background: white;
   border-top:15px solid #454545;
-  // margin: auto; 
+  margin: auto; 
   text-align: center;
   box-shadow: 0 0 30px black;
 }
@@ -104,7 +105,7 @@ color: #454545;
 .rate_form_container {
   border-style: none;
   padding: 20px; 
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   background: white;
   display:inline-block;
   border-top:15px solid #454545;
@@ -114,18 +115,27 @@ color: #454545;
 .faq {
   border-style: none;
   margin-bottom: 10px;
+  margin-left: 55px; 
   width: 450px; 
   background: white;
-  // display:inline-block;
   border-top:15px solid #454545;
   padding: 20px 0 20px 0;
   box-shadow: 0 0 30px black;
+}
+
+#accordion {
+  padding: 10px 20px 20px 20px; 
+}
+
+.card-block {
+  padding: 20px; 
 }
 
 .form-header {
   text-align: center; 
   margin: auto;
   padding-bottom: 10px; 
+
 }
 
 #headingOne, #headingTwo, #headingThree {
