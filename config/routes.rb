@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  # get "/rates" => "rates#index"
   root to: "rates#index"
   # homepage for site 
   get "/rates/new" => "rates#new"

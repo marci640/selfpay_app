@@ -1,15 +1,19 @@
-<br>
-<h2> Become a "Self Pay" Provider! </h2>
+
+<body class="providers-new">
+
 <br>
 
 <%= form_tag "/providers", method: :post do %>
 
+<div class="provider_form_container" >
+  <h2> Become a "Self Pay" Provider! </h2>
+<br>
   <form class="form_container">
     <div class="row">
       <div class="col-sm-3 mb-3">
         <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" required>
       </div>
-      <p> Enter your <strong> zipcode </strong> and your most commonly billed <strong> CPT codes </strong> to see Self Pay's Rates. </p>
+      <p> Enter your zipcode and your most commonly billed CPT codes to see Self Pay Rates. </p>
     </div>
 
     <div class="row">
@@ -22,22 +26,27 @@
       <%end%>
     </div>
 
-    <button class="btn btn-primary" type="submit">Submit form</button>
-
+    <button class="btn btn-dark" type="submit">Submit form</button>
+  <br>
   </form>
-<% end %>
+  <% end %>
 
-<br> 
-<p> What does it mean to be a self pay provider? </p> 
-<ul class= "provider_summary">
-  <li> Potential Self Pay patients will see you listed as a participating provider </li>
-  <li> You agree to bill Self Pay patients at the Self Pay rate </li>
-  <li> Self Pay Rates are Medicare's Non-Facility Rates +15% </li>
-  <li> Self Pay patients can mention this site to receive the discount </li>
-  <li> Come and go as a you wish - signing up and canceling is done with the click of a button </li>
-</ul>
+<br>
 
- 
+
+  <h4> What does it mean to be a self pay provider? </h4> 
+  <ul class= "provider_summary">
+    <li> Potential Self Pay patients will see you listed as a participating provider </li>
+    <li> You agree to bill Self Pay patients at the Self Pay rate </li>
+    <li> Self Pay Rates are Medicare's Non-Facility Rates +15% </li>
+    <li> Self Pay patients can mention this site to receive the discount </li>
+    <li> Come and go as a you wish - signing up and canceling is done with the click of a button </li>
+  </ul>
+
+
+</div>
+
+</body>
 
   
 

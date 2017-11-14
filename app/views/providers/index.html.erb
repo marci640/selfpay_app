@@ -11,29 +11,63 @@
       <h4> Use the options below to find a provider near you. </h4>
       <hr>
       <h5> A Self Pay provider is a provider who agrees to only charge a patient the self pay rate. <br> The self pay rate is Medicare's reimbursement rate plus an additional 15%. </h5>
-      
     </div>
-  </div>
-
-  <br> 
-      <div class="form-actions">
-        <button class="btn btn-dark" type="submit">Submit form</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 mb-6">
+          <input v-model="lastNameFilter" placeholder="Search Provider Name">
+        </div>
+        <div class="col-sm-6 mb-6">
+          <input v-model="specialtyFilter" placeholder="Search Specialty">
+        </div>
       </div>
+      <div class="row">
+        <div class="col-sm-6 mb-6">
+          <input v-model="zipcodeFilter">
+        </div>
+        <div class="col-sm-6 mb-6">
+          <button v-on:click="setValidZipcode()">Search by Zipcode</button>
+        </div>
+        <div class="col-sm-6 mb-6">
+          <label> <input type="radio" v-model="radius" v-bind:value="15"> 15 Miles </label>
+          <label> <input type="radio" v-model="radius" v-bind:value="25"> 25 Miles </label>
+          <label> <input type="radio" v-model="radius" v-bind:value="50"> 50 Miles </label>
+        </div>
+      </div>
+    </div>
 
 
 
-    <button v-on:click="setSortAttribute('last_name')"> Sort by Last Name </button>
+<!--     <button v-on:click="setSortAttribute('last_name')"> Sort by Last Name </button>
     <button v-on:click="setSortAttribute('specialty')"> Sort by Specialty </button>
-    <input v-model="lastNameFilter" placeholder="Search Provider Name">
-    <input v-model="specialtyFilter" placeholder="Search Specialty">
-    
-    Zipcode <input v-model="zipcodeFilter">
-    <button v-on:click="setValidZipcode()">Search by Zipcode</button>
 
-    <label> <input type="radio" v-model="radius" v-bind:value="15"> 15 Miles </label>
-    <label> <input type="radio" v-model="radius" v-bind:value="25"> 25 Miles </label>
-    <label> <input type="radio" v-model="radius" v-bind:value="50"> 50 Miles </label>  
-    
+       <input v-model="lastNameFilter" placeholder="Search Provider Name">
+       <input v-model="specialtyFilter" placeholder="Search Specialty">
+       
+       <input v-model="zipcodeFilter" placeholder="Zip Code">
+       <button v-on:click="setValidZipcode()">Search by Zipcode</button>
+
+       <label> <input type="radio" v-model="radius" v-bind:value="15"> 15 Miles </label>
+       <label> <input type="radio" v-model="radius" v-bind:value="25"> 25 Miles </label>
+       <label> <input type="radio" v-model="radius" v-bind:value="50"> 50 Miles </label>  
+
+
+
+      <br>
+      <input type="text" v-model="lastNameFilter" placeholder="Search Provider's Name">
+      <input type="text" v-model="specialtyFilter" placeholder="Search Specialty">
+      <br> -->
+
+  </div>
+  
+
+
+
+  
+   
+   
+
+ 
 
   <div class="provider-show">
     <div class="row">
@@ -41,7 +75,7 @@
         <div class="col-sm-6">
           <div class="card card-body mb-2" style="width: 20rem;">
             <i class="fa fa-user-md" style="font-size:64px;color:#8CA8AE;"></i>
-            <h4> {{ provider.first_name }} {{ provider.last_name }}, {{ provider.credential }} </h4>
+            <h5> {{ provider.first_name }} {{ provider.last_name }}, {{ provider.credential }} </h5>
             <p class="profile-title"> {{ provider.specialty }} <br>
               {{ provider.address_1 }} {{ provider.address_2 }} <br>
               {{ provider.city }}, {{ provider.state }} {{ provider.zipcode }} <br>
