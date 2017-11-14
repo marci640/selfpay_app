@@ -7,69 +7,48 @@
 
   <div class="provider_header_container">
     <div class="info"> 
-      <h2> Self Pay Providers </h2>
+      <h2> Find a Self Pay Provider </h2>
       <h4> Use the options below to find a provider near you. </h4>
       <hr>
       <h5> A Self Pay provider is a provider who agrees to only charge a patient the self pay rate. <br> The self pay rate is Medicare's reimbursement rate plus an additional 15%. </h5>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 mb-6">
-          <input v-model="lastNameFilter" placeholder="Search Provider Name">
-        </div>
-        <div class="col-sm-6 mb-6">
-          <input v-model="specialtyFilter" placeholder="Search Specialty">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 mb-6">
-          <input v-model="zipcodeFilter">
-        </div>
-        <div class="col-sm-6 mb-6">
-          <button v-on:click="setValidZipcode()">Search by Zipcode</button>
-        </div>
-        <div class="col-sm-6 mb-6">
-          <label> <input type="radio" v-model="radius" v-bind:value="15"> 15 Miles </label>
-          <label> <input type="radio" v-model="radius" v-bind:value="25"> 25 Miles </label>
-          <label> <input type="radio" v-model="radius" v-bind:value="50"> 50 Miles </label>
-        </div>
-      </div>
-    </div>
-
-
-
-<!--     <button v-on:click="setSortAttribute('last_name')"> Sort by Last Name </button>
-    <button v-on:click="setSortAttribute('specialty')"> Sort by Specialty </button>
-
-       <input v-model="lastNameFilter" placeholder="Search Provider Name">
-       <input v-model="specialtyFilter" placeholder="Search Specialty">
-       
-       <input v-model="zipcodeFilter" placeholder="Zip Code">
-       <button v-on:click="setValidZipcode()">Search by Zipcode</button>
-
-       <label> <input type="radio" v-model="radius" v-bind:value="15"> 15 Miles </label>
-       <label> <input type="radio" v-model="radius" v-bind:value="25"> 25 Miles </label>
-       <label> <input type="radio" v-model="radius" v-bind:value="50"> 50 Miles </label>  
-
-
-
       <br>
-      <input type="text" v-model="lastNameFilter" placeholder="Search Provider's Name">
-      <input type="text" v-model="specialtyFilter" placeholder="Search Specialty">
-      <br> -->
+        <div class="i-am-centered">
+          <div class="row ">
+          <input v-model="zipcodeFilter" class="btn btn-space zipcodes" placeholder="Zip Code">
+          Radius <br> (miles)
+           <label> 15  <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="15"></label>
+          <label> 25 <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="25"></label>
+          <label> 50 <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="50"></label>
+          <button class="btn btn-dark" v-on:click="setValidZipcode()">Search </button>
+          <br>
+        
+      </div>
+    </div>
+    </div>
+
+    
 
   </div>
   
 
 
-
-  
-   
-   
-
- 
-
   <div class="provider-show">
+    <div class="row">
+        <div class="btn-group">
+          <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort
+          </button>
+          <div class="dropdown-menu btn btn-space">
+            <a class="dropdown-item" v-on:click="setSortAttribute('last_name')">Sort by Last Name</a>
+            <a class="dropdown-item" v-on:click="setSortAttribute('specialty')">Sort by Specialty</a>
+          </div>
+          <br>
+          <input v-model="lastNameFilter" placeholder="Search Name" class="btn btn-space">
+          <input v-model="specialtyFilter" placeholder="Search Specialty" class="btn btn-space">
+          <a v-on:click="refreshPage()"> Refresh <i class="fa fa-refresh" aria-hidden="true"></i> </a>
+        </div>
+      </div>
+    <br>
     <div class="row">
       <div v-for="provider in modifiedProviders" v-if="filter(provider)" >
         <div class="col-sm-6">

@@ -2,3 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.provider_form_container {
+  border-style: none;
+  padding: 20px; 
+  margin-bottom: 50px;
+  margin-top: 20px; 
+  background: white;
+  display:inline-block;
+  border-top:15px solid #454545;
+  box-shadow: 0 0 30px black;
+}
+
+.i-am-centered { margin: auto; max-width: 600px;}
+
+.awesomplete .form-control {
+  width: 489px;
+}

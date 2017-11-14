@@ -32,6 +32,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
          this.sortAttribute = inputAttribute; 
       },
 
+      refreshPage: function() {
+          location.reload();
+      },
+
       setValidZipcode: function() { 
         if(this.zipcodeFilter.length === 5) {
           $.get("https://www.zipcodeapi.com/rest/" + this.key + "/radius.json/" + this.zipcodeFilter + "/" + this.radius + "/km?minimal", function(result) {

@@ -11,37 +11,53 @@
     <% end %>
 
 <br> 
+<!-- <div class="i-am-centered"> -->
+  <div class="provider_form_container" >
 
-<h1>Signup!</h1>
+  <h1> Provider Signup</h1>
 
-<h3> Edit as necessary and click submit. </h3>
+  <p> Edit as necessary and click submit. </p>
 
-<%= form_tag '/users', method: :post do  %>
+  <%= form_tag '/users', method: :post do  %>
+   
+  <form>
+    <%= render "form" %>
+    <!-- see form partial in view/users -->
 
-  <%= render "form" %>
-  <!-- see form partial in view/users -->
+    <div class="form-group">
+      <label for="exampleInputPassword1">Email</label>
+      <input type="text" class="form-control" name="email" required>
+    </div>
 
-  <div>
-    Email: <input type="email" name="email" required>
-  </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Password</label>
+      <input type="text" class="form-control" name="password" required>
+    </div>
 
-  <div>
-    Password: <input type="password" name="password" required>
-  </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Confirm Password</label>
+      <input type="text" class="form-control" name="password_confirmation" required>
+    </div>
 
-  <div>
-    Confirm Password: <input type="password" name="password_confirmation" required>
-  </div>
+    <!-- <div class="form-group"> -->
+      <!-- <label for="exampleInputEmail1">Active</label> -->
+      <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+        <label class="form-check-label">
+          <%= hidden_field_tag :active, false %>
+          <%= check_box_tag :active, checked = true %> Active (You will be listed as a participating provider - you can change this anytime.) </br></br>
+        </label>
+      </div>
+      <input type="submit" value="Submit">
+  </form>
+    <% end %>
+    </div>
 
-  <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-    <label class="form-check-label">
-      <%= hidden_field_tag :active, false %>
-      <%= check_box_tag :active, checked = true %> Active (You will be listed as a participating provider - you can change this anytime.) </br></br>
-    </label>
-  </div>
 
-  <input type="submit" value="Submit">
 
-<% end %>
+
+
+
+
+
 
 

@@ -22,6 +22,7 @@
   padding-top: 30px; 
   padding-left: 40px; 
   margin-bottom: 20px;
+  margin-top: 40px; 
   border-top:15px solid #454545;
   text-align: center;
   box-shadow: 0 0 30px black;
@@ -37,15 +38,12 @@
 .provider_header_container {
   border-style: none;
   padding: 10px; 
-  background: white;
+  background: #454545;
   margin: auto; 
   text-align: center;
   box-shadow: 0 0 30px black;
 }
 
-.form-control::-webkit-input-placeholder {
-color: #454545;
-}
 
 .provider_form_container {
   border-style: none;
@@ -61,4 +59,16 @@ color: #454545;
 .providers-new {
   background-color: #8CA8AE;
 }
+
+.btn-space {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;  
+}
+
+.i-am-centered { margin: auto; max-width: 600px;}
+
+
+
+
 
