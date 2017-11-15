@@ -3,7 +3,7 @@
 <div id="app">
 
 <!-- passing the api key for zipcodes api -->
-<input v-model="key" value="<%=@key%>" type="hidden">
+<!-- <input v-model="key" value="<%=@key%>" type="hidden"> -->
 
   <div class="provider_header_container">
     <%= scroll_reveal(animation: 'enter from the top after 0.3s, move 40px, over 2s') do %>
@@ -39,7 +39,7 @@
         <br>
         <input v-model="lastNameFilter" placeholder="Search Name" class="btn btn-space">
         <input v-model="specialtyFilter" placeholder="Search Specialty" class="btn btn-space">
-        <a v-on:click="refreshPage()"> Refresh <i class="fa fa-refresh" aria-hidden="true"></i> </a>
+        <button class="btn btn-dark" v-on:click="refreshPage()"> Refresh <i class="fa fa-refresh" aria-hidden="true"></i> </button>
       </div>
     </div>
     <br>
