@@ -35,12 +35,16 @@
 .provider_header_container {
   border-style: none;
   padding: 20px; 
-  background: #D5C7BC;
+  background: #8CA8AE;
   margin: auto; 
   text-align: center;
   box-shadow: 0 0 30px black;
   border-top:15px solid #454545;
   margin-top: 30px; 
+}
+
+.provider_header_container h1 {
+  color: white; 
 }
 
 // provider new form - cpt
