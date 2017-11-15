@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SelfpayApp</title>
+    <title>Self Pay Rate</title>
     <%= csrf_meta_tags %>
     <!-- JS moved to body per vuejs-rails-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet" type="text/css">
   </head>
-    <div class="jumbotron jumbotron-billboard">
-      <div class="img"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="header-title">Self Pay Rate</h1>
-                    <h4 class="header-title">An Online Resource for Self Pay Patients</h4>
-                </div>
-            </div>
-        </div>
-    </div>
 
-      <div class="topnav" id="myTopnav">
-      <a href="/">Home </a>
-      <a href="/rates/new">Compare Rates</a>
-      <a href="/providers">Find a Provider</a>
-      <% if current_user == nil %>
-        <a href="/login">Provider Login</a>
-        <a href="/providers/new">Provider Signup</a>
-      <% else %>
-        <a href="/logout">Provider Logout</a>
-        <a href="/users/<%=current_user.id%>">View My Account</a>
-      <% end %>
+  <!-- jumbotron header -->
+  <div class="jumbotron jumbotron-billboard">
+    <div class="img"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                <h1 class="header-title">Self Pay Rate</h1>
+                <h4 class="header-title">An Online Resource for Self Pay Patients</h4>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- nav bar -->
+  <div class="topnav" id="myTopnav">
+    <a href="/">Home </a>
+    <a href="/rates/new">Compare Rates</a>
+    <a href="/providers">Find a Provider</a>
+    <% if current_user == nil %>
+      <a href="/login">Provider Login</a>
+      <a href="/providers/new">Provider Signup</a>
+    <% else %>
+      <a href="/logout">Provider Logout</a>
+      <a href="/users/<%=current_user.id%>">View My Account</a>
+    <% end %>
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>
+  </div>
 
-    <script>
+  <!-- js for nav -->
+  <script>
     function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
     }
-    </script>
+  </script>
   
+  <!-- flash hashes for errors and successes -->
   <body>
     <% flash.each do |name, message| %>
       <div class="alert alert-<%=name%> alert-dismissible fade show" role="alert">
@@ -53,11 +58,10 @@
         <%= message %>
       </div>
     <% end %>
-
+    <!-- container for bs -->
     <div class="container">
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>
-
   </body>
 </html>

@@ -3,18 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
+// provider/new blurb on self pay
 .provider_summary li {
   margin-left: 30px; 
-  list-style-type: circle;
+  list-style-type: none;
 }
 
+// provider/new form container
 .form_container {
   border-style: groove;
   padding: 5px; 
   margin-bottom: 15px;
 }
 
+// provider index 
 .provider-show {
   background-color: #8CA8AE; 
   box-shadow: inset 0 0 0 10px #8CA8AE, inset 0 0 0 14px #fff;
@@ -29,23 +31,19 @@
   text-align: center;
 }
 
-.info{
-  background-color: #8CA8AE; 
-  padding: 30px; 
-  // box-shadow: inset 0 0 0 10px #D5C7BC, inset 0 0 0 14px #fff;
-}
-
+// top section of provider index
 .provider_header_container {
   border-style: none;
-  padding: 10px; 
-  background: white;
+  padding: 20px; 
+  background: #D5C7BC;
   margin: auto; 
   text-align: center;
   box-shadow: 0 0 30px black;
+  border-top:15px solid #454545;
   margin-top: 30px; 
 }
 
-
+// provider new form - cpt
 .provider_form_container {
   border-style: none;
   padding: 20px; 
@@ -57,17 +55,23 @@
   box-shadow: 0 0 30px black;
 }
 
+// blue background for some views
 .providers-new {
   background-color: #8CA8AE;
 }
 
+// spaced out buttons on index
 .btn-space {
   margin-left: 10px;
   margin-right: 10px;
   text-align: center;  
 }
 
-.i-am-centered { margin: auto; max-width: 600px;}
+// centering zipcode input on index
+.i-am-centered { 
+  margin: auto; 
+  max-width: 600px;
+}
 
 
 

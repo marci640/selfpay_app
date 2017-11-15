@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
 
   def new
+    # BloomAPI gem has it's own methods for getting address, etc. If found, add input values to new provider form to save time. NPI must be individual 
     npi = params[:npi]
     provider = BloomApi.find_by_npi(npi)
     @user = User.new 
@@ -47,7 +48,6 @@ class UsersController < ApplicationController
       redirect_to '/providers/new'
     end
   end 
-
 
   def show
     @user = User.find(params[:id])

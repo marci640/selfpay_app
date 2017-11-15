@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// container for new and edit user forms
 .provider_form_container {
   border-style: none;
   padding: 20px; 
@@ -11,10 +12,16 @@
   display:inline-block;
   border-top:15px solid #454545;
   box-shadow: 0 0 30px black;
+  text-align: center; 
 }
 
-.i-am-centered { margin: auto; max-width: 600px;}
-
+// extend specialty input box
 .awesomplete .form-control {
   width: 489px;
 }
+
+// blue color for some views
+.providers-new {
+  background-color: #8CA8AE;
+}
+

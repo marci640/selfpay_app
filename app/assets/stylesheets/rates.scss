@@ -13,14 +13,14 @@
 }
 
 .parallax-wrapper {
-    position: relative;
+  position: relative;
 }
 
 .parallax-container {
-    padding: 20px;
-    width: 100vw;
-    margin-left: calc(-50vw + 50% - 8px);
-    position: absolute;
+  padding: 20px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50% - 8px);
+  position: absolute;
 }
 
 // trasparent full width bar
@@ -56,37 +56,31 @@
 }
   
 .landing-a:hover {
-    text-shadow: 0 0 5px #DCE6EF !important;
-    font-size:1.0em;
-    text-decoration: none;
+  text-shadow: 0 0 5px #DCE6EF !important;
+  font-size:1.0em;
+  text-decoration: none;
 }
 // end of landing page 
 
 
-// rate request page 
+
+/////////// rate request page 
+
+// padding and color change for cpt form
 .form-control{
-    background-color: #efefef;
-    margin-right: 10px; 
-    margin-bottom: 10px; 
+  background-color: #efefef;
+  margin-right: 10px; 
+  margin-bottom: 10px; 
 }
 
+// the sub-heading with animation
 .sub-heading {
   background-color: #8CA8AE; 
   padding: 30px; 
   box-shadow: inset 0 0 0 10px #8CA8AE, inset 0 0 0 14px #454545;
 }
 
-.form-control::-webkit-input-placeholder {
-color: #454545;
-}
-
-.form-actions {
-    margin: 0;
-    background-color: transparent;
-    text-align: center;
-    color: #454545;
-}
-
+// header (includes sub-header)
 .header_container {
   border-style: none;
   padding: 10px; 
@@ -98,9 +92,11 @@ color: #454545;
   box-shadow: 0 0 30px black;
 }
 
+// form for cpt codes, amts, etc.
 .rate_form_container {
   border-style: none;
   padding: 20px; 
+  margin-top: 40px; 
   margin-bottom: 50px;
   background: white;
   display:inline-block;
@@ -108,9 +104,16 @@ color: #454545;
   box-shadow: 0 0 30px black;
 }
 
+// edits to cpt form (change placeholder color)
+.form-control::-webkit-input-placeholder {
+  color: #454545;
+}
+
+// container for faq
 .faq {
   border-style: none;
   margin-bottom: 10px;
+  margin-top: 40px; 
   margin-left: 55px; 
   width: 450px; 
   background: white;
@@ -119,24 +122,53 @@ color: #454545;
   box-shadow: 0 0 30px black;
 }
 
+// padding around faq
 #accordion {
   padding: 10px 20px 20px 20px; 
 }
 
+// text within accordion 
 .card-block {
   padding: 20px; 
 }
 
+// header for faq
 .form-header {
   text-align: center; 
   margin: auto;
   padding-bottom: 10px; 
-
 }
 
+// background color for accordion headers
 #headingOne, #headingTwo, #headingThree {
   background-color: #8CA8AE;
 }
+
+// accordion link styles
+#accordion a {
+  color: black;
+  border-bottom: 1px solid #785964;
+}
+
+// accordion link styles on hover
+.accordion a:hover {
+  color: black;
+  font-weight: bold;
+}
+
+// link at top
+.letter-request {
+  color: black;
+  border-bottom: 1px solid #785964;
+}
+
+.letter-request:hover {
+  color: black !important; 
+  font-weight: bold;
+}
+
+//////////////// end of rates/new
+
 
 // rate difference conditional for comparrison
 td.difference{

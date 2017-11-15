@@ -1,82 +1,72 @@
+<body class="mad-libs">
 
-<!--   <div id="app">
-   {{ message }}
-  </div> -->
-
-<head>
-<!--    <link rel="stylesheet" href="awesomplete.css" /> -->
- <script src="awesomplete.js" async></script>
- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
- <meta charset='utf-8'>
-</head>
-
-<script>
-  var ajax = new XMLHttpRequest();
-  ajax.open("GET", "https://rxnav.nlm.nih.gov/REST/displaynames.json", true);
-  ajax.onload = function() {
-    var list = JSON.parse(ajax.responseText)['displayTermsList']['term'].map(function(i) { return i; });
-    new Awesomplete(document.querySelector("#drugs"),{ list: list });
-  };
-  ajax.send();
+  <script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "https://rxnav.nlm.nih.gov/REST/displaynames.json", true);
+    ajax.onload = function() {
+      var list = JSON.parse(ajax.responseText)['displayTermsList']['term'].map(function(i) { return i; });
+      new Awesomplete(document.querySelector("#drugs"),{ list: list });
+    };
+    ajax.send();
+  </script>
 
 
-</script>
+  <br>
+  <h3> Medical Mad 😡 Libs </h3>
+   
+  <h5> Fill in the blanks to send an anonymous tweet about your overpriced healthcare: </h5>
+  <br> 
 
-<h3> Medical Mad 😡 Libs </h3>
-<br> 
+  <div> 
+    <form>
+      The drug <input type="text" id="drugs" name="#{#}drug" placeholder= "drug name" >
+      costs me: <input type="text" name="drug_cost" placeholder="$ amount" >
+      <select name="frequency">
+        <option value="select frequency" selected="selected"> Frequency </option>
+        <option value="per script"> per script </option>
+        <option value="a week"> a week </option>
+        <option value="a month"> a month </option>
+        <option value="every 90 days"> every 90 days </option>
+        <option value="a year"> a year </option>
+      </select>
+      <select name="frequency">
+        <option value="with insurance"> with insurance. </option>
+        <option value="a week"> without insurance. </option>
+      </select>
+    </form> 
+  </div>
 
-<h5> Fill in the blanks to send an anonymous tweet about your overpriced healthcare: </h5>
-<br> 
+  <br> 
 
-<div> 
-  <form>
-     The drug <input id="drugs" name="#{#}drug" placeholder= "drug name" >
-     costs me: <input type="text" name="drug_cost" placeholder="$ amount" >
-    <select name="frequency">
-      <option value="select frequency" selected="selected"> Frequency </option>
-      <option value="per script"> per script </option>
-      <option value="a week"> a week </option>
-      <option value="a month"> a month </option>
-      <option value="every 90 days"> every 90 days </option>
-      <option value="a year"> a year </option>
-    </select>
-    <select name="frequency">
-      <option value="with insurance"> with insurance. </option>
-      <option value="a week"> without insurance. </option>
-    </select>
-  </form> 
-</div>
+  <div> 
+    <form>
+       My insurance company <select name="insurance">
+        <option value="select insurance" selected="selected"> Insurance Name </option>
+        <option value="@Aetna"> Aetna </option>
+        <option value="@AnthemInc @AskAnthem @AskAnthem @BCBSAssociation"> Anthem Blue Cross / Blue Shield </option>
+        <option value="@AnthemInc @AskAnthem @AskAnthem @BCBSAssociation"> Blue Cross / Blue Shield </option>
+        <option value="@caresource"> CareSource </option>
+        <option value="@Cambia"> Cambia Health Solutions </option>
+        <option value="@Centene"> Centene Corp. </option>
+        <option value="@Cigna"> Cigna </option>
+        <option value="@MyCoventryCares"> Coventry HealthCare </option>
+        <option value="@HCSC"> HCSC Group </option>
+        <option value="@healthnet"> Health Net</option>
+        <option value="@Highmark"> Highmark  </option>
+        <option value="@Humana"> Humana </option>
+        <option value="@kpthrive @KPShare @KPMemberService"> Kaiser Permanente </option>
+        <option value="@medmutual @Med_Mutual"> Medical Mutual </option>
+        <option value="@molinahealth"> Molina Healthcare</option>
+        <option value="@multiplan @MultiPlan_Inc"> MultiPlan </option>
+        <option value="@myUHC @UnitedHealthGrp @UHC @askUHC"> United Healthare </option>
+        <option value="@WellCare_Health"> WellCare Health Plans</option>
+        <option value="@WellpointHS"> Wellpoint </option>
+      </select>
+      told me: <input type="text" name="insurance story" placeholder="your story" >
+    </form> 
+  </div>
 
-<br> 
-
-<div> 
-  <form>
-     My insurance company <select name="insurance">
-      <option value="select insurance" selected="selected"> Insurance Name </option>
-      <option value="@Aetna"> Aetna </option>
-      <option value="@AnthemInc @AskAnthem @AskAnthem @BCBSAssociation"> Anthem Blue Cross / Blue Shield </option>
-      <option value="@AnthemInc @AskAnthem @AskAnthem @BCBSAssociation"> Blue Cross / Blue Shield </option>
-      <option value="@caresource"> CareSource </option>
-      <option value="@Cambia"> Cambia Health Solutions </option>
-      <option value="@Centene"> Centene Corp. </option>
-      <option value="@Cigna"> Cigna </option>
-      <option value="@MyCoventryCares"> Coventry HealthCare </option>
-      <option value="@HCSC"> HCSC Group </option>
-      <option value="@healthnet"> Health Net</option>
-      <option value="@Highmark"> Highmark  </option>
-      <option value="@Humana"> Humana </option>
-      <option value="@kpthrive @KPShare @KPMemberService"> Kaiser Permanente </option>
-      <option value="@medmutual @Med_Mutual"> Medical Mutual </option>
-      <option value="@molinahealth"> Molina Healthcare</option>
-      <option value="@multiplan @MultiPlan_Inc"> MultiPlan </option>
-      <option value="@myUHC @UnitedHealthGrp @UHC @askUHC"> United Healthare </option>
-      <option value="@WellCare_Health"> WellCare Health Plans</option>
-      <option value="@WellpointHS"> Wellpoint </option>
-    </select>
-    told me: <input type="text" name="insurance story" placeholder="your story" >
-    
-  </form> 
-</div>
+</body>
 
 
 

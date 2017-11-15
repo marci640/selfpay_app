@@ -27,6 +27,8 @@
 }
 // End of no print areas 
 
+
+// removing the border from text areas for print
 textarea:focus {
   border-color: none; 
   border: 1px solid transparent;
@@ -45,10 +47,12 @@ input:focus {
   box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
 }
 
+// increase size for signature
 input {
   width: 40%; 
 }
 
+// button on letter pages
 .form-actions {
     margin: 0;
     background-color: transparent;
@@ -56,6 +60,7 @@ input {
     color: #454545;
 }
 
+// view for letter
 .letter {
   background: white;
   display: block;
@@ -68,11 +73,13 @@ input {
   height: 26.7cm; 
 }
 
+// hospital address 
 ul {
   list-style-type: none;
   padding: 0;
 }
 
+// letterhead
 .hr-theme-slash-2 {
   display: flex;
   

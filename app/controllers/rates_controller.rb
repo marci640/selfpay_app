@@ -23,6 +23,7 @@ class RatesController < ApplicationController
     8.times do 
       if params[:"procedure_code#{index}"] != "" 
         code = Code.find_by(code: params[:"procedure_code#{index}"])
+        # if code is not found in db, apply 7193 (unavailable cpt)
         if code == nil
           code = Code.find(7193)
           amount = Amount.find_by(code_id: code.id, location_id: 0)
@@ -42,6 +43,8 @@ class RatesController < ApplicationController
       end
       index += 1 
     end
+    # take data and transpose into array: [code, charge, amt, code, charge, amt, ...]
+    # this will be used for each table column in the rates/create page 
     @arrays = [codes_array, hospital_amounts, amounts_array].transpose.each { |x, y, z| p [x, y, z] }
     @hospital_address = @bill.hospital.split(', ')
   end 

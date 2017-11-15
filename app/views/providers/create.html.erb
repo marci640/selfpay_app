@@ -1,4 +1,3 @@
-
 <body class="providers-new">
 
 <br>
@@ -25,18 +24,16 @@
       </tbody>
     </table>
 
-  <hr>
-  <!-- line break --> 
+    <hr>
+    <!-- line break --> 
 
+    <p> To participate as a SelfPay Provider enter your individual NPI # and click Continue. </p>
 
-  <p> To participate as a SelfPay Provider enter your individual NPI # and click Continue. </p>
-
-
-  <%= form_tag "/signup", method: :get do %>
-    <input type="text" class="form-control" name="npi" placeholder="NPI" >
-    <br>
-    <button class="btn btn-dark" type="submit">Continue</button>
-  <%end%>
+    <%= form_tag "/signup", method: :get do %>
+      <input type="text" class="form-control" name="npi" placeholder="NPI" >
+      <br>
+      <button class="btn btn-dark" type="submit">Continue</button>
+    <%end%>
 
   </div>
 </div>

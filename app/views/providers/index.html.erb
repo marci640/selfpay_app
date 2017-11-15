@@ -6,48 +6,42 @@
 <input v-model="key" value="<%=@key%>" type="hidden">
 
   <div class="provider_header_container">
-   
-      <h2> Find a Self Pay Provider </h2>
-      <h4> Use the options below to find a provider near you. </h4>
-      <div class="info"> 
-      <h5> A Self Pay provider is a provider who agrees to only charge a patient the self pay rate. <br> The self pay rate is Medicare's reimbursement rate plus an additional 15%. </h5>
-      <br>
-        <div class="i-am-centered">
-          <div class="row ">
-          <input v-model="zipcodeFilter" class="btn btn-space zipcodes" placeholder="Zip Code">
-          Radius <br> (miles)
-           <label> 15  <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="15"></label>
-          <label> 25 <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="25"></label>
-          <label> 50 <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="50"></label>
-          <button class="btn btn-dark" v-on:click="setValidZipcode()">Search </button>
-          <br>
-        
+    <%= scroll_reveal(animation: 'enter from the top after 0.3s, move 40px, over 2s') do %>
+      <h1> Find a Self Pay Provider </h1>
+    <%end%>
+      
+    <hr>
+    <h5> A Self Pay provider is a provider who agrees to only charge a patient the self pay rate. <br> The self pay rate is Medicare's reimbursement rate plus an additional 15%. </h5>
+    <br>
+    <div class="i-am-centered">
+      <div class="row ">
+        <input v-model="zipcodeFilter" class="btn btn-space zipcodes" placeholder="Zip Code">
+      Radius <br> (miles)
+        <label> 15  <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="15"></label>
+        <label> 25 <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="25"></label>
+        <label> 50 <input class="btn btn-space" type="radio" v-model="radius" v-bind:value="50"></label>
+        <button class="btn btn-dark" v-on:click="setValidZipcode()">Search </button>
+        <br>
       </div>
     </div>
-    </div>
-
-    
-
   </div>
   
-
-
   <div class="provider-show">
     <div class="row">
-        <div class="btn-group">
-          <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sort
-          </button>
-          <div class="dropdown-menu btn btn-space">
-            <a class="dropdown-item" v-on:click="setSortAttribute('last_name')">Sort by Last Name</a>
-            <a class="dropdown-item" v-on:click="setSortAttribute('specialty')">Sort by Specialty</a>
-          </div>
-          <br>
-          <input v-model="lastNameFilter" placeholder="Search Name" class="btn btn-space">
-          <input v-model="specialtyFilter" placeholder="Search Specialty" class="btn btn-space">
-          <a v-on:click="refreshPage()"> Refresh <i class="fa fa-refresh" aria-hidden="true"></i> </a>
+      <div class="btn-group">
+        <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort
+        </button>
+        <div class="dropdown-menu btn btn-space">
+          <a class="dropdown-item" v-on:click="setSortAttribute('last_name')">Sort by Last Name</a>
+          <a class="dropdown-item" v-on:click="setSortAttribute('specialty')">Sort by Specialty</a>
         </div>
+        <br>
+        <input v-model="lastNameFilter" placeholder="Search Name" class="btn btn-space">
+        <input v-model="specialtyFilter" placeholder="Search Specialty" class="btn btn-space">
+        <a v-on:click="refreshPage()"> Refresh <i class="fa fa-refresh" aria-hidden="true"></i> </a>
       </div>
+    </div>
     <br>
     <div class="row">
       <div v-for="provider in modifiedProviders" v-if="filter(provider)" >

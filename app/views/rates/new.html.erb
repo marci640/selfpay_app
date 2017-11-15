@@ -1,5 +1,5 @@
 <body class="rates-request">
-
+<br> 
 <br> 
 <div class="header_container">
   <h1 class="compare-rates-header"> Negotiate your Hospital Bills </h1>
@@ -7,11 +7,12 @@
     <h5>  Complete the form below to compare your hospital bill with Medicare's reimbursement rates & generate a negotiation letter to send to your hospital. </h5>
     <%= scroll_reveal(animation: 'enter from the top after 0.3s, move 40px, over 2s') do %>
       <hr>
-      <h5> <strong> Note: </strong> If your bill does not include procedure codes (5 digit CPT codes) click <a href="/letters">here</a> to generate a letter requesting an itemized statement.</h5>
+      <h5> Note: If your bill does not include procedure codes (5 digit CPT codes) click <a class="letter-request" href="/letters">here</a> to generate a letter requesting an itemized statement.</h5>
     <%end%>
   </div>
 </div>
 <br> 
+
 
 
 <div class="container">
@@ -44,7 +45,7 @@
                 <input type="text" class="form-control" name="amt_billed<%=index%>" placeholder="Amount Billed" >
               </div>
               <div class="col-sm-6 mb-6">
-                <input type="text" class="form-control" name="procedure_code<%=index%>" placeholder="Procedure Code" >
+                <input type="text" class="form-control" name="procedure_code<%=index%>" placeholder="CPT Code" >
                 <% index += 1 %>
               </div>
             </div>
@@ -65,7 +66,7 @@
            <div class="card">
             <div class="card-header" role="tab" id="headingOne">
               <h5 class="mb-0">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <a class="accordion-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                  Why Negotiate? 
               </a>
               </h5>
@@ -114,7 +115,7 @@
            </div>
            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
              <div class="card-block">
-               The data was derived from Medicare's Physician Fee Schedule and is location based (your entered zipcode). The rates shown are facility rates meaning they're for a facility setting (hospitals/surgical centers). There are procedure codes missing from the fee schedule, so I encourage you to visit the following sites for further analysis: <a href="https://clearhealthcosts.com/"> Clear Health Costs </a> and <a href="https://www.fairhealthconsumer.org/"> Fair health Consumer </a>
+               The data was derived from Medicare's Physician Fee Schedule and is location based (your entered zip code). The rates shown are facility rates meaning they're for a facility setting (hospitals/surgical centers). There are procedure codes missing from Medicare's fee schedule, so I encourage you to visit the following sites for further analysis: <a href="https://clearhealthcosts.com/"> Clear Health Costs </a> and <a href="https://www.fairhealthconsumer.org/"> Fair health Consumer </a>
              </div>
            </div>
          </div>

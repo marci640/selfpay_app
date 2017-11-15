@@ -1,3 +1,4 @@
+<!-- hide jumbotron for letter view -->
 <style>
   .jumbotron {
     display: none !important;
@@ -6,6 +7,7 @@
 
 <div class="letter" >
   
+  <!-- letterhead -->
   <div class="hr-theme-slash-2">
     <div class="hr-line"></div>
     <div class="hr-icon"><i class="fa fa-ambulance" ></i></div>
@@ -16,7 +18,7 @@
     
     <ul>
     <% @hospital_address.each do |line| %> 
-    <li> <%=line%> </li>
+      <li> <%=line%> </li>
     <%end%>
     </ul>
 
@@ -24,7 +26,7 @@
 
     <p> RE: Medical Debt Discount Request </p>
 
-    <p> Date of service: <%=@dos%> </p>
+    <p> Date of Service: <%=@dos%> </p>
 
     <p> Dear Billing Department, </p>
 

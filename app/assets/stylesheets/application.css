@@ -14,12 +14,13 @@
  *= require_self
  */
 
-
+/*background color and font*/
 body { 
-  background-color: #716167; 
+  background-color: #785964; 
   font-family: 'Poppins', sans-serif;
  }
 
+/*nav*/
 .topnav {
   overflow: hidden;
   background-color: #454545;
@@ -37,7 +38,7 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #716167;
+  background-color: #785964;
   color: #F1FFFA;
   font-size:1.2em;
 }
@@ -46,9 +47,6 @@ body {
   display: none;
 }
 
-a {
-  color: black;
-}
 
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
@@ -74,6 +72,7 @@ a {
 }
 
 
+/*header*/
 .jumbotron-billboard .img {
     margin-bottom: 0px;
     opacity: 0.2;
@@ -107,6 +106,7 @@ a {
 .header-title {
   color: #454545;
 }
+
 
 /* perfect input box */
 .form-control:focus {

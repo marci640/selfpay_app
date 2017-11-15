@@ -14,6 +14,7 @@ class ProvidersController < ApplicationController
     codes_array = []
     selfpay_amounts = []
     
+    # If there's a cpt code, perform a lookup, add 15%, put data in array for table view on next view. If code not available, assign 7193 (unavailable cpt)
     index = 1
     8.times do 
       if params[:"procedure_code#{index}"] != "" 
