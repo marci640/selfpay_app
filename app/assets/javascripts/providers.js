@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       setValidZipcode: function() { 
         if(this.zipcodeFilter.length === 5) {
-          $.get("https://www.zipcodeapi.com/rest/" + this.key + "/radius.json/" + this.zipcodeFilter + "/" + this.radius + "/km?minimal", function(result) {
+          $.get("https://www.zipcodeapi.com/rest/js-XiG0A4ugEilaZme316AHwYnAT6PRMU151dE0fV7C2Ub4YVXo3RTOB9Xy3jDyfu0o/radius.json/" + this.zipcodeFilter + "/" + this.radius + "/km?minimal", function(result) {
              this.zipcodes = result.zip_codes; 
          }.bind(this));
         } 
