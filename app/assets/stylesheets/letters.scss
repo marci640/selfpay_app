@@ -28,7 +28,7 @@
 // End of no print areas 
 
 
-// removing the border from text areas for print
+// text areas not in print
 textarea:focus {
   border-color: none; 
   border: 1px solid transparent;
@@ -50,6 +50,10 @@ input:focus {
 // increase size for signature
 input {
   width: 40%; 
+}
+
+textarea { 
+  resize: none; 
 }
 
 // button on letter pages
