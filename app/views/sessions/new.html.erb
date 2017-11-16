@@ -1,27 +1,30 @@
 <br> 
 
-<div class="provider_form_container">
-<h1>Login</h1>
+<div class="i-am-centered">
+  <div class="provider_form_container">
+    <h1>Login</h1>
 
-<%= form_tag "/login", method: :post do %>
-  <form>
-    <div class="form-group">
-      <label for="email"> Email: </label>
-      <input type="email" class="form-control" name="email" required >
-    </div>
+    <%= form_tag "/login", method: :post do %>
+      <form>
+        <div class="form-group">
+          <label for="email"> Email: </label>
+          <input type="email" class="form-control" name="email" required >
+        </div>
 
-    <div class="form-group">
-      <label for="password"> Password: </label>
-      <input type="password" class="form-control" name="password" required >
-    </div>
+        <div class="form-group">
+          <label for="password"> Password: </label>
+          <input type="password" class="form-control" name="password" required >
+        </div>
 
-    <button class="btn btn-dark" type="submit" value="Log In">Submit form</button>
+        <button class="btn btn-dark" type="submit" value="Log In">Submit form</button>
 
-  </form>
-<% end %>
- 
-<br> 
+      </form>
+    <% end %>
+   
+    <br> 
 
-  <p> Don't have an account? Learn more about being a Self Pay provider <a class="provider-link" href="/providers/new">here</a>. </p>
+    <p> Don't have an account? </p>
+    <p> Learn more about being a Self Pay provider <a class="provider-link" href="/providers/new">here</a>. </p>
 
+  </div>
 </div>

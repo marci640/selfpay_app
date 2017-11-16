@@ -1,59 +1,61 @@
 <% if @user && @user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibitied this user from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibitied this user from being saved:</h2>
 
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <br> 
 <!-- <div class="i-am-centered"> -->
+<div class="i-am-centered">
   <div class="provider_form_container" >
 
-  <h1> Provider Signup</h1>
+    <h1> Provider Signup</h1>
 
-  <p> Edit as necessary and click submit. </p>
+    <p> Edit as necessary and click submit. </p>
 
-  <%= form_tag '/users', method: :post do  %>
-   
-  <form>
-    <%= render "form" %>
-    <!-- see form partial in view/users -->
+    <%= form_tag '/users', method: :post do  %>
+     
+      <form>
+        <%= render "form" %>
+        <!-- see form partial in view/users -->
 
-    <div class="form-group">
-      <label for="exampleInputPassword1">Email</label>
-      <input type="email" class="form-control" name="email" required>
-    </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Email</label>
+          <input type="email" class="form-control" name="email" required>
+        </div>
 
-    <div class="form-group">
-      <label for="exampleInputEmail1">Password</label>
-      <input type="password" class="form-control" name="password" required>
-    </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Password</label>
+          <input type="password" class="form-control" name="password" required>
+        </div>
 
-    <div class="form-group">
-      <label for="exampleInputEmail1">Confirm Password</label>
-      <input type="password" class="form-control" name="password_confirmation" required>
-    </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Confirm Password</label>
+          <input type="password" class="form-control" name="password_confirmation" required>
+        </div>
 
-    <!-- <div class="form-group"> -->
-      <!-- <label for="exampleInputEmail1">Active</label> -->
-       <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-        <label for="exampleInputEmail1">Active
-          <%= hidden_field_tag :active, false %>
-          <%= check_box_tag :active, checked = true %> 
-        </label>
-      </div>
+        <!-- <div class="form-group"> -->
+          <!-- <label for="exampleInputEmail1">Active</label> -->
+        <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+          <label for="exampleInputEmail1">Active
+            <%= hidden_field_tag :active, false %>
+            <%= check_box_tag :active, checked = true %> 
+          </label>
+        </div>
 
-      <div> 
-      <button class="btn btn-dark" type="submit">Submit form</button>
-      </div>
-  </form>
+        <div> 
+          <button class="btn btn-dark" type="submit">Submit form</button>
+        </div>
+      </form>
     <% end %>
-    </div>
+  </div>
+</div>
 
 
 

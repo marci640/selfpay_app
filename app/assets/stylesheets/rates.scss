@@ -60,6 +60,14 @@
   font-size:1.0em;
   text-decoration: none;
 }
+
+.parallax-wrapper-bottom {
+    margin-top: 600px; 
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
 // end of landing page 
 
 
@@ -147,7 +155,7 @@
 // accordion link styles
 #accordion a {
   color: black;
-  border-bottom: 1px solid #785964;
+  border-bottom: 2px solid #785964;
 }
 
 // accordion link styles on hover
@@ -159,7 +167,7 @@
 // link at top
 .letter-request {
   color: black;
-  border-bottom: 1px solid #785964;
+  border-bottom: 2px solid #785964;
 }
 
 .letter-request:hover {

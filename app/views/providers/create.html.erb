@@ -1,44 +1,44 @@
 <body class="providers-new">
 
-<br>
+  <br>
 
-<div class="i-am-centered">
-  <div class="provider_form_container" >
-    <h3> Self Pay Rates: </h3>
+  <div class="i-am-centered">
+    <div class="provider_form_container" >
+      <h3> Self Pay Rates: </h3>
 
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Procedure Code</th>
-          <th>Self Pay Rate</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @arrays.each_with_index do |array, index| %> 
+      <table class="table table-hover">
+        <thead>
           <tr>
-            <td><%= array[0].code %></td>
-            <td><%= number_to_currency(array[1])%></td>
+            <th>Procedure Code</th>
+            <th>Self Pay Rate</th>
           </tr>
-        <%end%>
-      </tbody>
-    </table>
+        </thead>
 
-    <hr>
-    <!-- line break --> 
+        <tbody>
+          <% @arrays.each_with_index do |array, index| %> 
+            <tr>
+              <td><%= array[0].code %></td>
+              <td><%= number_to_currency(array[1])%></td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
 
-    <p> To participate as a Self Pay Provider, enter your individual NPI # and click continue. </p>
+      <hr>
+      <!-- line break --> 
 
-    <%= form_tag "/signup", method: :get do %>
-      <input type="text" class="form-control" name="npi" placeholder="NPI" >
-      <br>
-      <button class="btn btn-dark" type="submit">Continue</button>
-    <%end%>
+      <p> To participate as a Self Pay Provider, enter your individual NPI # and click continue. </p>
 
+      <%= form_tag "/signup", method: :get do %>
+        <input type="text" class="form-control" name="npi" placeholder="NPI" >
+        <br>
+        <button class="btn btn-dark" type="submit">Continue</button>
+      <%end%>
+
+    </div>
   </div>
-</div>
 
-<br>
+  <br>
 
 </body>
 

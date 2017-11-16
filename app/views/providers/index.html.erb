@@ -2,17 +2,18 @@
 
 <div id="app">
 
-<!-- passing the api key for zipcodes api -->
+<!-- was originally passing the api key for zipcodes api, but switched to client key-->
 <!-- <input v-model="key" value="<%=@key%>" type="hidden"> -->
 
   <div class="provider_header_container">
     <%= scroll_reveal(animation: 'enter from the top after 0.3s, move 40px, over 2s') do %>
-      <h1> Find a Self Pay Provider </h1>
+      <h1> Find a Self Pay Provider <i class="fa fa-user-md" style="font-size:64px;color:white;"></i> </h1>
     <%end%>
       
     <hr>
     <h5> A Self Pay provider is a provider who agrees to only charge a patient the self pay rate. <br> The self pay rate is Medicare's reimbursement rate plus an additional 15%. </h5>
     <br>
+    
     <div class="i-am-centered">
       <div class="row ">
         <input v-model="zipcodeFilter" class="btn btn-space zipcodes" placeholder="Zip Code">

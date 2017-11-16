@@ -1,50 +1,47 @@
 <body class="providers-new">
 
-<br>
-
-<%= form_tag "/providers", method: :post do %>
-
-<div class="provider_form_container" >
-  <h2> Become a "Self Pay" Provider! </h2>
   <br>
-  <form class="form_container">
-    <div class="row">
-      <div class="col-sm-3 mb-3">
-        <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" required>
-      </div>
-      <p> Enter your zipcode and your most commonly billed CPT codes to see Self Pay Rates. </p>
-    </div>
 
-    <div class="row">
-      <%index = 1 %>
-      <% 8.times do %>
-        <div class="col-sm-3 mb-3">
-          <input type="text" class="form-control" name="procedure_code<%=index%>" placeholder="CPT Code">
-          <% index += 1 %>
+  <%= form_tag "/providers", method: :post do %>
+    <div class="provider_form_container" >
+      <h2> Become a "Self Pay" Provider! </h2>
+      <br>
+      <form class="form_container">
+        <div class="row">
+          <div class="col-sm-3 mb-3">
+            <input type="text" class="form-control" name="zipcode" placeholder="Zip Code" required>
+          </div>
+          <p> Enter your zipcode and your most commonly billed CPT codes to see Self Pay Rates. </p>
         </div>
+
+      <div class="row">
+        <%index = 1 %>
+        <% 8.times do %>
+          <div class="col-sm-3 mb-3">
+            <input type="text" class="form-control" name="procedure_code<%=index%>" placeholder="CPT Code">
+            <% index += 1 %>
+          </div>
+        <%end%>
+      </div>
+
+      <button class="btn btn-dark" type="submit">Submit form</button>
+      <br>
+      </form>
+  <% end %>
+
+      <%= scroll_reveal(animation: 'enter from the top after 0.3s, move 40px, over 2s') do %>
+        <hr>
+        <h4> What does it mean to be a self pay provider? </h4> 
+        <ul class= "provider_summary">
+          <li> Potential Self Pay patients will see you listed as a participating provider </li>
+          <li> You agree to bill Self Pay patients at the Self Pay rate </li>
+          <li> Self Pay Rates are Medicare's Non-Facility Rates +15% </li>
+          <li> Self Pay patients can mention this site to receive the discount </li>
+          <li> Come and go as a you wish - signing up and canceling is done with the click of a button </li>
+        </ul>
       <%end%>
+
     </div>
-
-    <button class="btn btn-dark" type="submit">Submit form</button>
-    <br>
-  </form>
-<% end %>
-
-  <br>
-
-  <%= scroll_reveal(animation: 'enter from the top after 0.3s, move 40px, over 2s') do %>
-    <hr>
-    <h4> What does it mean to be a self pay provider? </h4> 
-    <ul class= "provider_summary">
-      <li> Potential Self Pay patients will see you listed as a participating provider </li>
-      <li> You agree to bill Self Pay patients at the Self Pay rate </li>
-      <li> Self Pay Rates are Medicare's Non-Facility Rates +15% </li>
-      <li> Self Pay patients can mention this site to receive the discount </li>
-      <li> Come and go as a you wish - signing up and canceling is done with the click of a button </li>
-    </ul>
-  <%end%>
-
-</div>
 </body>
 
   
